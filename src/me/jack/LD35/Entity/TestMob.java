@@ -24,9 +24,15 @@ public class TestMob extends Mob{
     public void update(Level level){
         super.update(level);
         if(Keyboard.isKeyDown(Keyboard.KEY_W)){
-            yVel = -5;
+            yVel = -16;
         }
+        if(Keyboard.isKeyDown(Keyboard.KEY_D))
+            addX(5);
+        if(Keyboard.isKeyDown(Keyboard.KEY_A))
+            addX(-5);
     }
+
+
 
 
 }

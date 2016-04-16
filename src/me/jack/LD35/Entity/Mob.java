@@ -16,6 +16,7 @@ public abstract class Mob extends Entity {
         super(x, y);
     }
 
+    float tV = 16;
     @Override
     public void update(Level level) {
 
@@ -25,12 +26,19 @@ public abstract class Mob extends Entity {
         } else {
             Rectangle test = level.canMove(getX(), getY() + 1, 16, 16);
             if(test == null) {
-                float diff = getY() - rect.getY();
-                diff +=16;
-                System.out.println(diff);
-                addY(diff);
-                yVel = 0;
-                return;
+                if(rect.getY() > getY() + yVel) {
+                    float diff = rect.getY() - getY();
+                    diff -= 16;
+                    addY(diff);
+                    yVel = 0;
+                    return;
+                }else{
+                    float diff =  getY() - rect.getY();
+                    diff -= 16;
+                    addY(-diff+0.05f);
+                    yVel = 0;
+                    return;
+                }
             }
             else {
                 yVel = 0;
@@ -38,6 +46,9 @@ public abstract class Mob extends Entity {
             }
         }
         yVel += g;
+        if(yVel >= tV){
+            yVel = tV;
+        }
     }
 
 

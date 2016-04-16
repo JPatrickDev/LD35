@@ -16,15 +16,16 @@ public class Level{
     private int[] tiles;
     private int width,height;
 
-    TestMob mob = new TestMob(5,5);
+    TestMob mob = new TestMob(5,22*Tile.TILE_SIZE);
     ArrayList<Rectangle> hitboxes = new ArrayList<Rectangle>();
 
     public Level(int width,int height){
         this.width = width;
         this.height = height;
         tiles = new int[width*height];
-        for(int x = 0;x!= width;x++){
+        for(int x = 0;x!= 25;x++){
             setTileAt(x,20,1);
+            setTileAt(x,28,1);
         }
     }
 

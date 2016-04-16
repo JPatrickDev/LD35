@@ -20,7 +20,9 @@ public abstract class Entity{
     public void addY(float add){
         this.y +=add;
     }
-
+    public void addX(int x) {
+        this.x += x;
+    }
     public float getX() {
         return x;
     }
