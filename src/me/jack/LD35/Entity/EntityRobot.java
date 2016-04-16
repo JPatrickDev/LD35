@@ -63,9 +63,10 @@ public class EntityRobot extends Entity{
                     }
                 }
         }
-        if(health<=0)
+        if(health<=0) {
             level.entities.remove(this);
-
+            level.getPlayer().addExp(1);
+        }
         if(onFire)
             health-=0.5f;
     }

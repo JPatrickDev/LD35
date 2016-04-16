@@ -20,6 +20,10 @@ public class EntityPlayer extends Entity {
     public int currentShape = 0;
     public Shape currentShapeObject = new SquareShape();
     ArrayList<Image> spriteArray = new ArrayList<Image>();
+
+    private float exp;
+    public float level;
+    private float nextLevel = 20;
     public EntityPlayer(float x, float y) {
         super(x, y, 16, 16);
 
@@ -63,6 +67,8 @@ public class EntityPlayer extends Entity {
 
     public void shift(int i) {
         i-=1;
+        if(i > level)
+            return;
         if(currentShape == i)
             return;
 
@@ -74,5 +80,26 @@ public class EntityPlayer extends Entity {
 
         this.health = currentShapeObject.getHealth();
 
+    }
+
+    public void addExp(int exp) {
+        this.exp+=exp;
+        if(this.exp>(level*level) + 20){
+            level++;
+            this.exp = 0;
+            nextLevel = level*level + 20;
+        }
+    }
+
+    public float getExp() {
+        return exp;
+    }
+
+    public float getExpToNextLevel() {
+        return nextLevel;
+    }
+
+    public float getLevel() {
+        return level;
     }
 }

@@ -22,7 +22,6 @@ public class FireballProjectile extends Projectile{
     @Override
     public void onCollideWithEntity(Level level,Entity entity) {
         if(entity instanceof EntityRobot){
-            System.out.println("FIRE");
             ((EntityRobot)entity).onFire = true;
             for(int i =0 ;i!= 100;i++)
             level.particleSystem.addParticle(new FireParticle((int)entity.getX(),(int)entity.getY()));

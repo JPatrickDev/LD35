@@ -13,13 +13,14 @@ public class ShapeSelect{
     static SpriteSheet icons;
     static SpriteSheet guiElements;
     static ArrayList<Image> iconImages = new ArrayList<Image>();
-    static Image selected;
+    static Image selected,locked;
     public static void render(Graphics g, Level level){
         if(icons == null){
             try {
                 icons = new SpriteSheet("res/shapeIcons.png",64,64);
                 guiElements = new SpriteSheet("res/guiElements.png",64,64);
                 selected = guiElements.getSprite(0,0);
+                locked = guiElements.getSprite(1,0);
             } catch (SlickException e) {
                 e.printStackTrace();
             }
@@ -27,13 +28,16 @@ public class ShapeSelect{
                 iconImages.add(icons.getSprite(i, 0));
             }
         }
-        g.fillRect(0,480,800,64);
+        g.fillRect(0,480,320,64);
         for(int i = 0;i!= 5;i++){
             g.setColor(Color.black);
             g.drawRect(i*64,480,64,64);
             g.drawImage(iconImages.get(i),i*64,480);
             g.setColor(Color.white);
             g.drawString((i+1) + "",i*64,548);
+            if(level.getPlayer().level < i){
+                g.drawImage(locked,i*64,480);
+            }
         }
         g.drawImage(selected,level.getPlayer().currentShape * 64,480);
         g.setColor(Color.white);
