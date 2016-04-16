@@ -1,6 +1,7 @@
 package me.jack.LD35.States;
 
 import me.jack.LD35.Entity.EntityRobot;
+import me.jack.LD35.GUI.ShapeSelect;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Level.Tile.Tile;
 import org.newdawn.slick.GameContainer;
@@ -25,6 +26,7 @@ public class InGameState extends BasicGameState {
     @Override
     public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
     level.render(graphics);
+        ShapeSelect.render(graphics,level);
     }
 
     @Override
@@ -35,6 +37,7 @@ public class InGameState extends BasicGameState {
     @Override
     public void keyPressed(int key, char c) {
         super.keyPressed(key, c);
+        level.keyPressed(key,c);
 
     }
 

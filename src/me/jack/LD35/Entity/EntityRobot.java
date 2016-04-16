@@ -15,7 +15,7 @@ public class EntityRobot extends Entity{
 
     public EntityRobot(float x, float y) {
         super(x, y, 16, 16);
-        image = sprites.getSprite(1, 0);
+        image = sprites.getSprite(3, 0);
     }
 
     @Override

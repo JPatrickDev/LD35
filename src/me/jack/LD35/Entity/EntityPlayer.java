@@ -2,9 +2,14 @@ package me.jack.LD35.Entity;
 
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.LaserProjectile;
+import me.jack.LD35.Shape.CircleShape;
+import me.jack.LD35.Shape.Shape;
+import me.jack.LD35.Shape.SquareShape;
 import org.lwjgl.input.Keyboard;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+
+import java.util.ArrayList;
 
 /**
  * Created by Jack on 16/04/2016.
@@ -12,34 +17,39 @@ import org.newdawn.slick.Image;
 public class EntityPlayer extends Entity {
 
     Image image;
-
+    public int currentShape = 0;
+    public Shape currentShapeObject = new SquareShape();
+    ArrayList<Image> spriteArray = new ArrayList<Image>();
     public EntityPlayer(float x, float y) {
         super(x, y, 16, 16);
-        image = sprites.getSprite(0, 0);
+
+        for(int i = 0;i!= 4;i++){
+            spriteArray.add(sprites.getSprite(i,0));
+        }
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(image, getX(), getY());
+        g.drawImage(spriteArray.get(currentShape), getX(), getY());
     }
 
     @Override
     public void update(Level level) {
         if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
-            if(level.canMove(getX(),getY()-6,getW(),getH()))
-            addY(-6);
+            if(level.canMove(getX(),getY()-(currentShapeObject.getMoveSpeed()),getW(),getH()))
+            addY(-(currentShapeObject.getMoveSpeed()));
         }
         if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
-            if(level.canMove(getX(),getY()+6,getW(),getH()))
-            addY(6);
+            if(level.canMove(getX(),getY()+(currentShapeObject.getMoveSpeed()),getW(),getH()))
+            addY((currentShapeObject.getMoveSpeed()));
         }
         if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
-            if(level.canMove(getX()-6,getY(),getW(),getH()))
-            addX(-6);
+            if(level.canMove(getX()-(currentShapeObject.getMoveSpeed()),getY(),getW(),getH()))
+            addX(-(currentShapeObject.getMoveSpeed()));
         }
         if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
-            if(level.canMove(getX()+6,getY(),getW(),getH()))
-            addX(6);
+            if(level.canMove(getX()+(currentShapeObject.getMoveSpeed()),getY(),getW(),getH()))
+            addX((currentShapeObject.getMoveSpeed()));
         }
 
         if(health <=0){
@@ -48,7 +58,21 @@ public class EntityPlayer extends Entity {
     }
 
     public void mouseClick(int x,int y, int button,Level level){
-        level.entities.add(new EntityProjectile(getX(),getY(),x,y,new LaserProjectile()));
+        currentShapeObject.attack(x,y,level);
     }
 
+    public void shift(int i) {
+        i-=1;
+        if(currentShape == i)
+            return;
+
+        currentShape = i;
+        if(i == 0)
+            currentShapeObject = new SquareShape();
+        else if(i == 1)
+            currentShapeObject = new CircleShape();
+
+        this.health = currentShapeObject.getHealth();
+
+    }
 }

@@ -85,7 +85,7 @@ public class Level {
         e.update(this);
         player.update(this);
 
-        if(r.nextInt(20) == 0){
+        if(r.nextInt(5) == 0){
             entities.add(new EntityRobot(r.nextInt(400),r.nextInt(400)));
         }
     }
@@ -96,6 +96,20 @@ public class Level {
                 return false;
         }
         return true;
+    }
+    public void keyPressed(int key,char c){
+        System.out.println(c);
+        if(c == '1'){
+            player.shift(1);
+        }else if(c == '2'){
+            player.shift(2);
+        }else if(c == '3'){
+            player.shift(3);
+        }else if(c == '4'){
+            player.shift(4);
+        }else if(c == '5'){
+            player.shift(5);
+        }
     }
 
     public void clicked(int x, int y, int button) {

@@ -1,5 +1,5 @@
-- Enemy entity
-- Projectiles can kill the enemies
+- Enemy entity/
+- Projectiles can kill the enemies/
 
 - Switching shape GUI at the bottom
 
