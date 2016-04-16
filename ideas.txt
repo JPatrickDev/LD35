@@ -1,0 +1,27 @@
+Theme: Shapeshift
+
+
+Infinite runner
+- Each shape has a special ability
+    - Have to swap between abilities to complete the level
+        - One shape can jump
+        - One shape can slide
+Platformer/////////////////////////////////
+   - Each shape has a special ability
+       - Have to flick between shapes to survive a level
+            - Number keys select a shape?
+       - Infinite rounds like Snowbie?
+       - You have a basic shape and different shapes only last a set amount of time
+       - Bit like mutate?
+       - Some shapes are really powerful but only last a few seconds
+       - Killing the bad guys give you points towards being able to shape shift
+       - Random platform level generation so the game can go on forever
+       - Could also work top down?
+       - Particle effects
+       - Perhaps have quite a basic colour scheme (b/w?) but then the particles/weapons are quite bright, might look good
+       - Bad guys have different shapes as well, to show different difficulty levels.
+            - Don't have the players shapes the same as the bad guys
+                - Probably can't have very many player shapes and bad guy shapes if this is the case
+
+
+

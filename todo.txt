@@ -1,0 +1,10 @@
+- Tiled level/
+    - Needs to support multiple tile types/
+        - Grayscale colour scheme?
+
+- A mob class that obeys gravity
+    - Working jumping and collision detection with the tiles
+
+- Player that can be controlled by the keyboard
+
+- abstract shape class
