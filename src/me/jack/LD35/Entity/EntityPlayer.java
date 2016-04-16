@@ -41,6 +41,10 @@ public class EntityPlayer extends Entity {
             if(level.canMove(getX()+6,getY(),getW(),getH()))
             addX(6);
         }
+
+        if(health <=0){
+            //gg
+        }
     }
 
     public void mouseClick(int x,int y, int button,Level level){

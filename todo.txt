@@ -1,48 +1,16 @@
-- Tiled level/
-    - Needs to support multiple tile types/
-        - Grayscale colour scheme?
+- Enemy entity
+- Projectiles can kill the enemies
 
+- Switching shape GUI at the bottom
 
-- Player that can be controlled by the keyboard/
+- XP from killing enemies
+    - XP levels you up and unlocks the next shape
+- Enemies drop something that works towards "charging up" the unlocked shape for use
 
-- abstract shape class/
+- Shapes only last a set period of time
 
-method for telling the current shape
-    - When the player jumps/
-    - When the player lands?
-    - When the player attacks/
-    - When the player takes damage
+- The default shape gets more powerful over time
 
-- Enemy mobs
-    - Different types?
-    - Some with ranged?
-    - Some with melee attacks?
+- Round based system with enemies spawning
 
-
-Shape ideas:
- - Square
-    - The default shape
-    - Single shot low fire rate gun?
- - Triangle
-    - The first shape unlocked
-      - Faster move speed
-      - Faster fire rate
-
-
-Maybe have it so the default shape upgrades over time, as the levels get harder
-
-Make the player a different colour to the other shapes so it stands out
-    - Would allow shapes to be re-used?
-
-Round based?
-
-Collision detection for the x-axis/
-
-
-Mob AI
- - A* pathfinding?
-
-Projectile System
-- Different move speeds
-- Different damages
-- Particle stream in flight?
+- Particles

@@ -12,6 +12,7 @@ public class EntityProjectile extends Entity{
     float vX,vY;
     float life = 1f;
     Projectile projectile;
+
     public EntityProjectile(float x, float y, int tX, int tY, Projectile projectile) {
         super(x, y, 16,16);
         float xSpeed = (tX - x);
@@ -32,10 +33,18 @@ public class EntityProjectile extends Entity{
 
     @Override
     public void update(Level level) {
+        if(life <= 0)
+            level.entities.remove(this);
         addX(vX);
         addY(vY);
         life-=0.25f;
-        if(life <= 0)
-            level.entities.remove(this);
+
+    }
+
+    public void hitEntity(Entity entity) {
+        if(entity instanceof EntityRobot){
+            entity.health-=projectile.getDamage();
+            life = 0;
+        }
     }
 }

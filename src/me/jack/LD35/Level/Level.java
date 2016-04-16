@@ -2,6 +2,7 @@ package me.jack.LD35.Level;
 
 import me.jack.LD35.Entity.Entity;
 import me.jack.LD35.Entity.EntityPlayer;
+import me.jack.LD35.Entity.EntityRobot;
 import me.jack.LD35.Level.Tile.Tile;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.geom.*;
@@ -9,6 +10,7 @@ import org.newdawn.slick.geom.*;
 import java.awt.*;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -54,6 +56,7 @@ public class Level {
             }
         }
         player = new EntityPlayer(60,60);
+        entities.add(new EntityRobot(60,60));
     }
 
 
@@ -75,11 +78,16 @@ public class Level {
         e.render(g);
         player.render(g);
     }
+    Random r= new Random();
 
     public void update(){
         for(Entity e : entities)
         e.update(this);
         player.update(this);
+
+        if(r.nextInt(20) == 0){
+            entities.add(new EntityRobot(r.nextInt(400),r.nextInt(400)));
+        }
     }
     public boolean canMove(float x, float y, float w, float h) {
         Rectangle checking = new Rectangle((int)x, (int)y, (int)w, (int)h);
@@ -92,5 +100,9 @@ public class Level {
 
     public void clicked(int x, int y, int button) {
         player.mouseClick(x,y,button,this);
+    }
+
+    public EntityPlayer getPlayer() {
+        return player;
     }
 }
