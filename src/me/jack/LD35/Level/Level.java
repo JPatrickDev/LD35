@@ -6,6 +6,7 @@ import me.jack.LD35.Entity.EntityRobot;
 import me.jack.LD35.Level.Tile.Tile;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.geom.*;
+import uk.co.jdpatrick.JEngine.Particle.ParticleSystem;
 
 import java.awt.*;
 import java.awt.Rectangle;
@@ -24,6 +25,7 @@ public class Level {
     public ArrayList<Rectangle> hitboxes = new ArrayList<>();
 
 
+    public ParticleSystem particleSystem = new ParticleSystem();
     EntityPlayer player;
     public CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList<>();
 
@@ -77,6 +79,7 @@ public class Level {
         for(Entity e : entities)
         e.render(g);
         player.render(g);
+        particleSystem.render(g,0,0);
     }
     Random r= new Random();
 
@@ -88,6 +91,7 @@ public class Level {
         if(r.nextInt(5) == 0){
             entities.add(new EntityRobot(r.nextInt(400),r.nextInt(400)));
         }
+        particleSystem.update();
     }
     public boolean canMove(float x, float y, float w, float h) {
         Rectangle checking = new Rectangle((int)x, (int)y, (int)w, (int)h);

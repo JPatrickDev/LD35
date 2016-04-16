@@ -41,10 +41,11 @@ public class EntityProjectile extends Entity{
 
     }
 
-    public void hitEntity(Entity entity) {
+    public void hitEntity(Entity entity,Level level) {
         if(entity instanceof EntityRobot){
             entity.health-=projectile.getDamage();
             life = 0;
+            projectile.onCollideWithEntity(level,entity);
         }
     }
 }

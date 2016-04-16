@@ -72,4 +72,8 @@ public abstract class Particle {
      * @param system The {@code ParticleSystem} the Particle belongs to
      */
     public abstract void update(ParticleSystem system);
+
+    public Shape getHitbox() {
+        return particle;
+    }
 }

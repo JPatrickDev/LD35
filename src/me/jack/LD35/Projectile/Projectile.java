@@ -1,5 +1,6 @@
 package me.jack.LD35.Projectile;
 
+import me.jack.LD35.Entity.Entity;
 import me.jack.LD35.Level.Level;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
@@ -31,7 +32,7 @@ public abstract class Projectile {
     }
 
     public abstract void onDestroy(Level level);
-    public abstract void onCollideWithEntity(Level level);
+    public abstract void onCollideWithEntity(Level level,Entity entity);
     public abstract void onSpawn(Level level);
 
 

@@ -1,5 +1,6 @@
 package me.jack.LD35.Projectile;
 
+import me.jack.LD35.Entity.Entity;
 import me.jack.LD35.Level.Level;
 
 /**
@@ -17,7 +18,7 @@ public class LaserProjectile extends Projectile{
     }
 
     @Override
-    public void onCollideWithEntity(Level level) {
+    public void onCollideWithEntity(Level level,Entity entity) {
 
     }
 
