@@ -23,17 +23,12 @@ public class EnemyCircle extends Mob {
     public void update(Level level) {
         super.update(level);
         Player p = level.getPlayer();
-            if (p.getX() > getX()) {
-                if(level.canMove(getX()+5,getY()-1,16,16) == null) {
-                    if(level.canMove(getX()+16,getY()+3,16,16) != null) {
-                        addX(5);
-                    }
-                }
-            } else {
-                if(level.canMove(getX()-5,getY()-1,16,16) == null) {
-                    if(level.canMove(getX()-16,getY()+3,16,16) != null)
-                    addX(-5);
-                }
-            }
-        }
+        float xSpeed = (p.getX() - getX());
+        float ySpeed = (p.getY() - getY());
+        float factor = (float) (5 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
+        xSpeed *= factor;
+        ySpeed *= factor;
+        addX(xSpeed);
+        addY(ySpeed);
+    }
 }

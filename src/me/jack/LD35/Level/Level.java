@@ -21,7 +21,7 @@ public class Level{
     private int[] tiles;
     private int width,height;
 
-    Player mob = new Player(5,15*Tile.TILE_SIZE);
+    Player mob = new Player(50,15*Tile.TILE_SIZE);
     ArrayList<Rectangle> hitboxes = new ArrayList<Rectangle>();
     public CopyOnWriteArrayList<Mob> mobs = new CopyOnWriteArrayList<Mob>();
 
@@ -29,12 +29,15 @@ public class Level{
         this.width = width;
         this.height = height;
         tiles = new int[width*height];
-        for(int x = 0;x!= 25;x++){
-            setTileAt(x,20,1);
+
+        for(int x = 0;x!= width;x++){
+            setTileAt(x,0,1);
+            setTileAt(x,height-1,1);
         }
 
-        for(int x = 25;x!= 50;x++){
-            setTileAt(x,23,1);
+        for(int y = 0;y!= height;y++){
+            setTileAt(0,y,1);
+            setTileAt(width-1,y,1);
         }
 
 
@@ -98,9 +101,7 @@ public class Level{
     }
 
     public void keyPressed(int key, char c) {
-        if(c == 'w'){
-            mob.jump();
-        }
+
     }
 
     public void mousePressed(int button, int x, int y) {

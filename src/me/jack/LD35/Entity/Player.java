@@ -43,6 +43,16 @@ public class Player extends Mob{
                 addX(-8);
             }
         }
+        if(Keyboard.isKeyDown(Keyboard.KEY_W)){
+            if(level.canMove(getX(),getY()-8,16,16) == null) {
+                addY(-8);
+            }
+        }
+        if(Keyboard.isKeyDown(Keyboard.KEY_S)){
+            if(level.canMove(getX(),getY()+8,16,16) == null) {
+                addY(+8);
+            }
+        }
 
         currentHitbox.setX(getX());
         currentHitbox.setY(getY());
@@ -59,15 +69,4 @@ public class Player extends Mob{
         System.out.println("Attack");
     }
 
-    @Override
-    public void jump(){
-        super.jump();
-        if(currentShape instanceof Circle){
-            shift(new Square());
-        }else{
-            shift(new Circle());
-        }
-
-        currentShape.jump(this);
-    }
 }

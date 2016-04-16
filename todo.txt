@@ -2,8 +2,6 @@
     - Needs to support multiple tile types/
         - Grayscale colour scheme?
 
-- A mob class that obeys gravity/
-    - Working jumping and collision detection with the tiles/
 
 - Player that can be controlled by the keyboard/
 
@@ -43,4 +41,4 @@ Collision detection for the x-axis/
 
 Mob AI
  - A* pathfinding?
- - If the player is above them, try to find a platform they can jump up to
+
