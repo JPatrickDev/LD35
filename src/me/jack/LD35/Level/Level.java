@@ -21,7 +21,7 @@ public class Level{
     private int[] tiles;
     private int width,height;
 
-    Player mob = new Player(5,22*Tile.TILE_SIZE);
+    Player mob = new Player(5,15*Tile.TILE_SIZE);
     ArrayList<Rectangle> hitboxes = new ArrayList<Rectangle>();
     public CopyOnWriteArrayList<Mob> mobs = new CopyOnWriteArrayList<Mob>();
 
@@ -31,8 +31,12 @@ public class Level{
         tiles = new int[width*height];
         for(int x = 0;x!= 25;x++){
             setTileAt(x,20,1);
-            setTileAt(x,28,1);
         }
+
+        for(int x = 25;x!= 50;x++){
+            setTileAt(x,23,1);
+        }
+
 
         mobs.add(new EnemyCircle(50,50));
     }
@@ -101,5 +105,9 @@ public class Level{
 
     public void mousePressed(int button, int x, int y) {
         mob.attack(this);
+    }
+
+    public Player getPlayer() {
+        return mob;
     }
 }

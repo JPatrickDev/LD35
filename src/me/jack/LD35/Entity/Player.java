@@ -48,16 +48,7 @@ public class Player extends Mob{
         currentHitbox.setY(getY());
     }
 
-    public void jump() {
-        yVel = -16;
-        if(currentShape instanceof Circle){
-            shift(new Square());
-        }else{
-            shift(new Circle());
-        }
 
-        currentShape.jump(this);
-    }
 
     public void shift(Shape newShape){
         currentShape = newShape;
@@ -66,5 +57,17 @@ public class Player extends Mob{
 
     public void attack(Level level) {
         System.out.println("Attack");
+    }
+
+    @Override
+    public void jump(){
+        super.jump();
+        if(currentShape instanceof Circle){
+            shift(new Square());
+        }else{
+            shift(new Circle());
+        }
+
+        currentShape.jump(this);
     }
 }

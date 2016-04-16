@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f78dd9-f0c0-40d0-96d6-340237aaf191" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Shape/Circle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Shape/Shape.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Shape/Square.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/Entity.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/Entity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/EnemyCircle.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/EnemyCircle.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/Mob.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/Mob.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/TestMob.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/TestMob.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/Player.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Level/Level.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Level/Level.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/States/InGameState.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/States/InGameState.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Entity/Entity.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Entity/Mob.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/Mob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Entity/Player.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Level/Level.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Level/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
     </list>
     <ignored path="LD35.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,17 +48,17 @@
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todo.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5511551">
-              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -115,30 +108,30 @@
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Level/Level.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#644#655#0" expanded="true" />
-                <element signature="e#2684#2685#0" expanded="true" />
-                <element signature="e#2716#2717#0" expanded="true" />
+                <element signature="e#2732#2733#0" expanded="true" />
+                <element signature="e#2764#2765#0" expanded="true" />
+                <element signature="e#2797#2798#0" expanded="true" />
+                <element signature="e#2823#2824#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnemyCircle.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EnemyCircle.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.24257426">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#276#277#0" expanded="true" />
-                <element signature="e#327#328#0" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#366#367#0" expanded="true" />
+                <element signature="e#416#417#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,7 +141,7 @@
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/Mob.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+              <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,11 +153,11 @@
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="55" selection-end-column="32" />
+              <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1592#1593#0" expanded="true" />
-                <element signature="e#1636#1637#0" expanded="true" />
+                <element signature="e#1373#1374#0" expanded="true" />
+                <element signature="e#1417#1418#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -204,11 +197,11 @@
         <option value="$PROJECT_DIR$/src/me/jack/LD35/Shape/Square.java" />
         <option value="$PROJECT_DIR$/src/me/jack/LD35/Shape/Circle.java" />
         <option value="$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java" />
-        <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/Mob.java" />
-        <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java" />
+        <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/src/me/jack/LD35/Level/Level.java" />
         <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/Player.java" />
-        <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/Mob.java" />
+        <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java" />
       </list>
     </option>
   </component>
@@ -845,8 +838,10 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#644#655#0" expanded="true" />
-            <element signature="e#2684#2685#0" expanded="true" />
-            <element signature="e#2716#2717#0" expanded="true" />
+            <element signature="e#2732#2733#0" expanded="true" />
+            <element signature="e#2764#2765#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
+            <element signature="e#2823#2824#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -983,30 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/Circle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1019,25 +990,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/Mob.java">
+    <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Level/Level.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#644#655#0" expanded="true" />
-            <element signature="e#2684#2685#0" expanded="true" />
-            <element signature="e#2716#2717#0" expanded="true" />
+            <element signature="e#2732#2733#0" expanded="true" />
+            <element signature="e#2764#2765#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
+            <element signature="e#2823#2824#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1045,20 +1024,36 @@
     <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="55" selection-end-column="32" />
+          <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
+            <element signature="e#1417#1418#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
+    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/Mob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5511551">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/EnemyCircle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24257426">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
