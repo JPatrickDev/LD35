@@ -7,51 +7,35 @@ import org.newdawn.slick.Graphics;
 /**
  * Created by Jack on 16/04/2016.
  */
-public class EntityProjectile extends Entity {
+public class EntityProjectile extends Entity{
 
-    private float tX, tY;
-    private float xVel, yVel;
-    private Projectile projectile;
-    private float lifeSpan = 0;
-
-    public EntityProjectile(float x, float y, float tX, float tY, Projectile projectile) {
-        super(x, y);
-        this.tX = tX;
-        this.tY = tY;
-        this.projectile = projectile;
-        lifeSpan = projectile.getLife();
-
+    float vX,vY;
+    float life = 1f;
+    Projectile projectile;
+    public EntityProjectile(float x, float y, int tX, int tY, Projectile projectile) {
+        super(x, y, 16,16);
         float xSpeed = (tX - x);
         float ySpeed = (tY - y);
-        float factor = (float) (projectile.getMoveSpeed() / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
+        float factor = (float) (projectile.getMoveSpeed()/ Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
         xSpeed *= factor;
         ySpeed *= factor;
-        xVel = xSpeed;
-        yVel = ySpeed;
+        vX = xSpeed;
+        vY = ySpeed;
+        life = projectile.getLifeSpan();
+        this.projectile = projectile;
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(projectile.getI(), getX(), getY());
+        g.drawImage(this.projectile.getImage(),getX(),getY());
     }
-
-    boolean remove = false;
 
     @Override
     public void update(Level level) {
-        addX(xVel);
-        addY(yVel);
-        lifeSpan-=0.25f;
-        if(lifeSpan <  0)
+        addX(vX);
+        addY(vY);
+        life-=0.25f;
+        if(life <= 0)
             level.entities.remove(this);
-
-        if(remove){
-            level.entities.remove(this);
-        }
-    }
-
-    public void hitMob(Mob mob){
-        mob.health-=projectile.getDamage();
-        remove = true;
     }
 }

@@ -1,111 +1,96 @@
 package me.jack.LD35.Level;
 
-import me.jack.LD35.Entity.*;
+import me.jack.LD35.Entity.Entity;
+import me.jack.LD35.Entity.EntityPlayer;
 import me.jack.LD35.Level.Tile.Tile;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.geom.Rectangle;
-import org.w3c.dom.css.Rect;
+import org.newdawn.slick.geom.*;
 
+import java.awt.*;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Created by Jack on 16/04/2016.
  */
-public class Level{
+public class Level {
 
-    private int[] tiles;
-    private int width,height;
+    private int[][] tiles;
+    private int width, height;
 
-    Player mob = new Player(50,15*Tile.TILE_SIZE);
-    ArrayList<Rectangle> hitboxes = new ArrayList<Rectangle>();
-    public CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList<Entity>();
+    public ArrayList<Rectangle> hitboxes = new ArrayList<>();
 
-    public Level(int width,int height){
+
+    EntityPlayer player;
+    public CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList<>();
+
+    public Level(int width, int height) {
         this.width = width;
         this.height = height;
-        tiles = new int[width*height];
-
-        for(int x = 0;x!= width;x++){
-            setTileAt(x,0,1);
-            setTileAt(x,height-1,1);
+        tiles = new int[width][height];
+        for (int x = 0; x != width; x++) {
+            for (int y = 0; y != height; y++) {
+                tiles[x][y] = 0;
+            }
         }
 
-        for(int y = 0;y!= height;y++){
-            setTileAt(0,y,1);
-            setTileAt(width-1,y,1);
+        for (int x = 0; x != width; x++) {
+            tiles[x][0] = 1;
+            tiles[x][height - 1] = 1;
         }
 
+        for (int y = 0; y != height; y++) {
+            tiles[0][y] = 1;
+            tiles[width - 1][y] = 1;
+        }
 
-        entities.add(new EnemyCircle(50,50));
-    }
-
-    public int getWidth(){
-        return width;
-    }
-
-    public int getHeight(){
-        return height;
-    }
-
-    public int getTileAt(int x,int y){
-        if(x < 0 || x > this.width)return -1;
-        if(y< 0 || y > this.height) return -1;
-        return tiles[x+y*this.width];
-    }
-
-    public void setTileAt(int x,int y, int i){
-        System.out.println("Setting tile " + x + ":" + y + ":" + width + ":" + height);
-        if(x < 0 || x > width)return;
-        if(y< 0 || y > height) return;
-        hitboxes.add(new Rectangle(x * Tile.TILE_SIZE,y*Tile.TILE_SIZE,Tile.TILE_SIZE,Tile.TILE_SIZE));
-        tiles[x+y*width] = i;
-    }
-
-    public void render(Graphics g){
-        for(int x = 0;x!= width;x++){
-            for(int y = 0;y!= height;y++){
+        for (int x = 0; x != width; x++) {
+            for (int y = 0; y != height; y++) {
                 int i = getTileAt(x,y);
-                if(i != -1){
-                    Tile.render(g,x,y,i);
+                if(Tile.tileLookup.get(i).isSolid()){
+                    hitboxes.add(new Rectangle(x*Tile.TILE_SIZE,y*Tile.TILE_SIZE,Tile.TILE_SIZE ,Tile.TILE_SIZE));
                 }
             }
         }
-        for(Entity m : entities)
-            m.render(g);
-        mob.render(g);
+        player = new EntityPlayer(60,60);
+    }
 
-        g.setColor(Color.orange);
-        for(Rectangle r : hitboxes){
-            g.fill(r);
+
+    public int getTileAt(int x, int y) {
+        return tiles[x][y];
+    }
+
+    public void setTileAt(int x, int y, int i) {
+        tiles[x][y] = i;
+    }
+
+    public void render(Graphics g) {
+        for (int x = 0; x != width; x++) {
+            for (int y = 0; y != height; y++) {
+                Tile.tileLookup.get(tiles[x][y]).render(g, x, y);
+            }
         }
-        g.setColor(Color.white);
+        for(Entity e : entities)
+        e.render(g);
+        player.render(g);
     }
 
     public void update(){
-        for(Entity m :entities)
-        m.update(this);
-        mob.update(this);
+        for(Entity e : entities)
+        e.update(this);
+        player.update(this);
     }
-
-    public Rectangle canMove(float x, float y, int width,int height) {
-        Rectangle r = new Rectangle(x,y,width,height);
-        for(Rectangle hit : hitboxes){
-            if(r.intersects(hit))return hit;
+    public boolean canMove(float x, float y, float w, float h) {
+        Rectangle checking = new Rectangle((int)x, (int)y, (int)w, (int)h);
+        for (Rectangle hitbox : hitboxes) {
+            if (checking.intersects(hitbox))
+                return false;
         }
-        return null;
+        return true;
     }
 
-    public void keyPressed(int key, char c) {
-
-    }
-
-    public void mousePressed(int button, int x, int y) {
-        mob.attack(this,x,y);
-    }
-
-    public Player getPlayer() {
-        return mob;
+    public void clicked(int x, int y, int button) {
+        player.mouseClick(x,y,button,this);
     }
 }

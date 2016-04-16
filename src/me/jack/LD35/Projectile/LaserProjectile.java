@@ -1,6 +1,5 @@
 package me.jack.LD35.Projectile;
 
-import me.jack.LD35.Entity.Mob;
 import me.jack.LD35.Level.Level;
 
 /**
@@ -8,22 +7,22 @@ import me.jack.LD35.Level.Level;
  */
 public class LaserProjectile extends Projectile{
 
-    public LaserProjectile() {
-        super(1f, 20, "Laser", 5, 0, 0);
-    }
-
-    @Override
-    public void onSpawn(Level level) {
-
-    }
-
-    @Override
-    public void onHitMob(Level level, Mob mob) {
-
+    public LaserProjectile(){
+        super(5f, 10, 20, 0, 0);
     }
 
     @Override
     public void onDestroy(Level level) {
+
+    }
+
+    @Override
+    public void onCollideWithEntity(Level level) {
+
+    }
+
+    @Override
+    public void onSpawn(Level level) {
 
     }
 }
