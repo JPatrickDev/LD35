@@ -42,3 +42,7 @@ Collision detection for the x-axis/
 Mob AI
  - A* pathfinding?
 
+Projectile System
+- Different move speeds
+- Different damages
+- Particle stream in flight?

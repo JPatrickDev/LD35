@@ -1,9 +1,9 @@
 package me.jack.LD35.Entity;
 
 import me.jack.LD35.Level.Level;
+import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Shape.Circle;
 import me.jack.LD35.Shape.Shape;
-import me.jack.LD35.Shape.Square;
 import org.lwjgl.input.Keyboard;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -65,8 +65,8 @@ public class Player extends Mob{
         currentHitbox = currentShape.getShape();
     }
 
-    public void attack(Level level) {
-        System.out.println("Attack");
+    public void attack(Level level,int x,int y) {
+      level.entities.add(new EntityProjectile(getX(),getY(),x,y,new LaserProjectile()));
     }
 
 }

@@ -9,7 +9,7 @@ import org.newdawn.slick.Graphics;
 public abstract class Entity{
     private float x,y;
 
-    public Entity(int x,int y){
+    public Entity(float x,float y){
         this.x = x;
         this.y = y;
     }

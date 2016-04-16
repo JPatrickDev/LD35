@@ -20,7 +20,7 @@ public abstract class Mob extends Entity {
     @Override
     public void update(Level level) {
         if(health <= 0){
-            level.mobs.remove(this);
+            level.entities.remove(this);
             return;
         }
     }

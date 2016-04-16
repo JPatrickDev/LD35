@@ -1,9 +1,6 @@
 package me.jack.LD35.Level;
 
-import me.jack.LD35.Entity.EnemyCircle;
-import me.jack.LD35.Entity.Mob;
-import me.jack.LD35.Entity.Player;
-import me.jack.LD35.Entity.TestMob;
+import me.jack.LD35.Entity.*;
 import me.jack.LD35.Level.Tile.Tile;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -23,7 +20,7 @@ public class Level{
 
     Player mob = new Player(50,15*Tile.TILE_SIZE);
     ArrayList<Rectangle> hitboxes = new ArrayList<Rectangle>();
-    public CopyOnWriteArrayList<Mob> mobs = new CopyOnWriteArrayList<Mob>();
+    public CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList<Entity>();
 
     public Level(int width,int height){
         this.width = width;
@@ -41,7 +38,7 @@ public class Level{
         }
 
 
-        mobs.add(new EnemyCircle(50,50));
+        entities.add(new EnemyCircle(50,50));
     }
 
     public int getWidth(){
@@ -75,7 +72,7 @@ public class Level{
                 }
             }
         }
-        for(Mob m : mobs)
+        for(Entity m : entities)
             m.render(g);
         mob.render(g);
 
@@ -87,7 +84,7 @@ public class Level{
     }
 
     public void update(){
-        for(Mob m :mobs)
+        for(Entity m :entities)
         m.update(this);
         mob.update(this);
     }
@@ -105,7 +102,7 @@ public class Level{
     }
 
     public void mousePressed(int button, int x, int y) {
-        mob.attack(this);
+        mob.attack(this,x,y);
     }
 
     public Player getPlayer() {
