@@ -29,6 +29,17 @@ public class InGameState extends BasicGameState {
         level.update();
     }
 
+    @Override
+    public void keyPressed(int key, char c) {
+        super.keyPressed(key, c);
+        level.keyPressed(key,c);
+    }
+
+    @Override
+    public void mousePressed(int button, int x, int y) {
+        super.mousePressed(button, x, y);
+        level.mousePressed(button,x,y);
+    }
 
     @Override
     public int getID() {

@@ -9,17 +9,21 @@ import org.newdawn.slick.geom.Rectangle;
 public abstract class Mob extends Entity {
 
 
-    public static float g = 0.5f;
+    public static float g = 1;
     protected float yVel = 0;
-
     public Mob(int x, int y) {
         super(x, y);
     }
 
+    public float health = 10f;
+
     float tV = 16;
     @Override
     public void update(Level level) {
-
+        if(health <= 0){
+            level.mobs.remove(this);
+            return;
+        }
         Rectangle rect = level.canMove(getX(), getY() + yVel, 16, 16);
         if (rect == null) {
             addY(yVel);
@@ -49,6 +53,8 @@ public abstract class Mob extends Entity {
         if(yVel >= tV){
             yVel = tV;
         }
+
+
     }
 
 

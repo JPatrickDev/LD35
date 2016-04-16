@@ -5,6 +5,42 @@
 - A mob class that obeys gravity/
     - Working jumping and collision detection with the tiles/
 
-- Player that can be controlled by the keyboard
+- Player that can be controlled by the keyboard/
 
-- abstract shape class
+- abstract shape class/
+
+method for telling the current shape
+    - When the player jumps/
+    - When the player lands?
+    - When the player attacks/
+    - When the player takes damage
+
+- Enemy mobs
+    - Different types?
+    - Some with ranged?
+    - Some with melee attacks?
+
+
+Shape ideas:
+ - Square
+    - The default shape
+    - Single shot low fire rate gun?
+ - Triangle
+    - The first shape unlocked
+      - Faster move speed
+      - Faster fire rate
+
+
+Maybe have it so the default shape upgrades over time, as the levels get harder
+
+Make the player a different colour to the other shapes so it stands out
+    - Would allow shapes to be re-used?
+
+Round based?
+
+Collision detection for the x-axis/
+
+
+Mob AI
+ - A* pathfinding?
+ - If the player is above them, try to find a platform they can jump up to
