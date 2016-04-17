@@ -2,6 +2,7 @@ package me.jack.LD35.GUI;
 
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Shape.CircleShape;
+import me.jack.LD35.Shape.OctagonShape;
 import me.jack.LD35.Shape.Shape;
 import me.jack.LD35.Shape.SquareShape;
 import me.jack.LD35.States.InGameState;
@@ -26,6 +27,7 @@ public class ShapeSelect {
     static {
         shapes.add(new SquareShape());
         shapes.add(new CircleShape());
+        shapes.add(new OctagonShape());
         for (int i = 0; i != 5; i++) {
             Rectangle r = new Rectangle(i * 64, 480, 64, 64);
             hitboxLookup.put(r, i);
@@ -59,8 +61,10 @@ public class ShapeSelect {
             if (i != 0 && i < shapes.size()) {
                 g.setColor(Color.red);
                 float factor = level.getPlayer().getCharge() / shapes.get(i).getChargeNeeded();
-                if (factor > 1)
+                if (factor >= 1) {
                     factor = 1;
+                    g.setColor(Color.green);
+                }
                 g.fillRect(i * 64, 538, 64 * factor, 10);
                 g.setColor(Color.white);
             }

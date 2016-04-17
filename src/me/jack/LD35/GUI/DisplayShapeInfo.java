@@ -5,6 +5,7 @@ import me.jack.LD35.Projectile.FireballProjectile;
 import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Projectile.Projectile;
 import me.jack.LD35.Shape.CircleShape;
+import me.jack.LD35.Shape.OctagonShape;
 import me.jack.LD35.Shape.Shape;
 import me.jack.LD35.Shape.SquareShape;
 import me.jack.LD35.States.InGameState;
@@ -29,8 +30,10 @@ public class DisplayShapeInfo {
     static {
         shapes.add(new SquareShape());
         shapes.add(new CircleShape());
+        shapes.add(new OctagonShape());
 
         projectiles.add(new LaserProjectile(100,0));
+        projectiles.add(new FireballProjectile());
         projectiles.add(new FireballProjectile());
     }
     public static void displayInfo(int shape, Graphics g){

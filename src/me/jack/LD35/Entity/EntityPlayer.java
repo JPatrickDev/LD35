@@ -3,6 +3,7 @@ package me.jack.LD35.Entity;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Shape.CircleShape;
+import me.jack.LD35.Shape.OctagonShape;
 import me.jack.LD35.Shape.Shape;
 import me.jack.LD35.Shape.SquareShape;
 import org.lwjgl.input.Keyboard;
@@ -111,6 +112,12 @@ public class EntityPlayer extends Entity {
         }
         else if(i == 1) {
             newShape = new CircleShape();
+            if(chargeLevel < newShape.getChargeNeeded())
+                return;
+            chargeLevel = 0;
+            switchCountdown = 500;
+        }else if(i == 2){
+            newShape = new OctagonShape();
             if(chargeLevel < newShape.getChargeNeeded())
                 return;
             chargeLevel = 0;
