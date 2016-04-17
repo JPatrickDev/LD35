@@ -24,11 +24,15 @@ public class EntityProjectile extends Entity{
         vY = ySpeed;
         life = projectile.getLifeSpan();
         this.projectile = projectile;
+        drawAngle = (float) -(Math.atan2(this.getX() - tX, this.getY() - tY) * 180 / Math.PI);
     }
 
+    float drawAngle = 0;
     @Override
     public void render(Graphics g) {
+        projectile.getImage().setRotation(drawAngle);
         g.drawImage(this.projectile.getImage(),getX(),getY());
+        projectile.getImage().setRotation(0f);
     }
 
     @Override
@@ -37,7 +41,8 @@ public class EntityProjectile extends Entity{
             level.entities.remove(this);
         addX(vX);
         addY(vY);
-        life-=0.25f;
+
+
 
     }
 

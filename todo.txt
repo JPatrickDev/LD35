@@ -39,7 +39,10 @@ Each shape has a projectile attack and an powerful AOE attack/
 Nice polished GUI for viewing the details about a shape/
 
 
-Art for the robot
+Art for the robot/
+    - Art for the different sides
+Fire animation/
+
 
 Bottom GUI needs improving
 
@@ -56,7 +59,7 @@ Multiple enemy types
 
 Everything needs balancing
 
-Rotate projectiles so they face the direction of travel
+Rotate projectiles so they face the direction of travel/
 
 Triangle shape
 - Knock back AOE
