@@ -8,17 +8,17 @@ import org.newdawn.slick.Graphics;
 /**
  * Created by Jack on 16/04/2016.
  */
-public class EntityProjectile extends Entity{
+public class EntityProjectile extends Entity {
 
-    float vX,vY;
+    float vX, vY;
     float life = 1f;
     Projectile projectile;
 
     public EntityProjectile(float x, float y, int tX, int tY, Projectile projectile) {
-        super(x, y, 16,16);
+        super(x, y, 16, 16);
         float xSpeed = (tX - x);
         float ySpeed = (tY - y);
-        float factor = (float) (projectile.getMoveSpeed()/ Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
+        float factor = (float) (projectile.getMoveSpeed() / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
         xSpeed *= factor;
         ySpeed *= factor;
         vX = xSpeed;
@@ -29,31 +29,29 @@ public class EntityProjectile extends Entity{
     }
 
     float drawAngle = 0;
+
     @Override
     public void render(Graphics g) {
         projectile.getImage().setRotation(drawAngle);
-        g.drawImage(this.projectile.getImage(),getX(),getY());
+        g.drawImage(this.projectile.getImage(), getX(), getY());
         projectile.getImage().setRotation(0f);
     }
 
     @Override
     public void update(Level level) {
-        if(life <= 0)
+        if (life <= 0)
             level.entities.remove(this);
         addX(vX);
         addY(vY);
 
 
-
     }
 
-    public void hitEntity(Entity entity,Level level) {
-        if(entity instanceof EntityRobot && !(this.projectile instanceof GreenProjectile)){
-            entity.health-=projectile.getDamage();
-            System.out.println(entity.health);
-            System.out.println(projectile.getDamage());
+    public void hitEntity(Entity entity, Level level) {
+        if (entity instanceof EntityRobot && !(this.projectile instanceof GreenProjectile)) {
+            entity.health -= projectile.getDamage();
             life = 0;
-            projectile.onCollideWithEntity(level,entity);
+            projectile.onCollideWithEntity(level, entity);
         }
     }
 }

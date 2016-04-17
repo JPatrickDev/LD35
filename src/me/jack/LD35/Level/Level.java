@@ -91,7 +91,7 @@ public class Level {
         e.update(this);
         player.update(this);
 
-        if(r.nextInt((int) (15)) == 0 && needToSpawn > 0){
+        if(r.nextInt((int) (10)) == 0 && needToSpawn > 0){
             int sX = 0,sY = 0;
             if(r.nextBoolean()){
                 if(r.nextBoolean()){

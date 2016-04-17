@@ -70,8 +70,21 @@ public class EntityRobot extends Entity {
     Random r = new Random();
 
     int imgPos = 0;
+
+    boolean first = true;
     @Override
     public void update(Level level) {
+        if(first){
+            if(level.round > 10 && level.round < 30){
+                health = 20;
+            }else if(level.round > 30 && level.round < 60){
+                health = 25;
+            }else if(level.round > 60 ){
+                health = 40;
+            }
+            System.out.println(level.round + ":" + health);
+            first = false;
+        }
         if (health <= 0) {
             level.entities.remove(this);
             level.getPlayer().chargeLevel+=2;

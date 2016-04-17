@@ -75,7 +75,7 @@ sound effects/
 
 Delay between going gameover and accepting input
 
-Diamond AOE
+Diamond AOE/
 
 
 Increase the robots health over time
