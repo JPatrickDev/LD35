@@ -5,8 +5,10 @@ import me.jack.LD35.GUI.LevelInfo;
 import me.jack.LD35.GUI.ShapeSelect;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Level.Tile.Tile;
+import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -35,6 +37,10 @@ public class InGameState extends BasicGameState {
     @Override
     public void update(GameContainer gameContainer, StateBasedGame stateBasedGame, int i) throws SlickException {
         level.update();
+        if(Mouse.isButtonDown(0)) {
+            Input in = gameContainer.getInput();
+            level.pressed(in.getMouseX(),in.getMouseY(),0);
+        }
     }
 
     @Override
@@ -47,9 +53,10 @@ public class InGameState extends BasicGameState {
     @Override
     public void mousePressed(int button, int x, int y) {
         super.mousePressed(button, x, y);
-        level.clicked(x, y, button);
-
+        //level.clicked(x, y, button);
     }
+
+
 
     @Override
     public int getID() {

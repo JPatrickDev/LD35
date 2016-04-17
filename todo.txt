@@ -17,9 +17,13 @@ GUI for showing current EXP and level/
 
 - Round based system with enemies spawning/
 
-- The default shape gets more powerful over time
+- The default shape gets more powerful over time/
+    - Laser projectile improves over time/
+    - Health increases/
+    - Over time = every X rounds?/
 
 
+- Some method of health regen
 
 - Particles/
 

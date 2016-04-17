@@ -132,4 +132,8 @@ public class EntityPlayer extends Entity {
     public float getCharge() {
         return chargeLevel;
     }
+
+    public void mouseDown(int x, int y, int button, Level level) {
+        currentShapeObject.attack(x,y,level);
+    }
 }

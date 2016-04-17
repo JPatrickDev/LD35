@@ -8,8 +8,10 @@ import me.jack.LD35.Level.Level;
  */
 public class LaserProjectile extends Projectile{
 
-    public LaserProjectile(){
-        super(5f, 10, 20, 0, 0);
+    public LaserProjectile(int fireRate,float damageBoost){
+        super(5+damageBoost, 10, 20, 0, 0,fireRate);
+        if(fireRate < 70)
+            fireRate = 70;
     }
 
     @Override

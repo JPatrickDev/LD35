@@ -15,10 +15,11 @@ public abstract class Projectile {
     private int moveSpeed;
     private int lifeSpan;
     private Image image;
+    private long fireRate;
 
     public static SpriteSheet projectileImages;
 
-    public Projectile(float damage, int moveSpeed, int lifeSpan, int tX,int tY) {
+    public Projectile(float damage, int moveSpeed, int lifeSpan, int tX,int tY,long fireRate) {
         if(projectileImages == null)
             try {
                 projectileImages = new SpriteSheet(new Image("res/projectiles.png"),16,16);
@@ -29,6 +30,7 @@ public abstract class Projectile {
         this.moveSpeed = moveSpeed;
         this.lifeSpan = lifeSpan;
         this.image = projectileImages.getSprite(tX,tY);
+        this.fireRate = fireRate;
     }
 
     public abstract void onDestroy(Level level);
@@ -51,4 +53,9 @@ public abstract class Projectile {
     public Image getImage() {
         return image;
     }
+
+    public long getFireRate() {
+        return fireRate;
+    }
+
 }

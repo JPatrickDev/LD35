@@ -78,7 +78,7 @@ public class Level {
                 Tile.tileLookup.get(tiles[x][y]).render(g, x, y);
             }
         }
-        for(Entity e : entities)
+            for(Entity e : entities)
         e.render(g);
         player.render(g);
         particleSystem.render(g,0,0);
@@ -90,7 +90,7 @@ public class Level {
         e.update(this);
         player.update(this);
 
-        if(r.nextInt((int) (10 + Math.pow(round,2))) == 0 && needToSpawn > 0){
+        if(r.nextInt((int) (5 + (Math.pow(round,2))/4)) == 0 && needToSpawn > 0){
             int sX = 0,sY = 0;
             if(r.nextBoolean()){
                 if(r.nextBoolean()){
@@ -150,6 +150,10 @@ public class Level {
 
     public void clicked(int x, int y, int button) {
         player.mouseClick(x,y,button,this);
+    }
+
+    public void pressed(int x, int y, int button) {
+        player.mouseDown(x,y,button,this);
     }
 
     public EntityPlayer getPlayer() {
