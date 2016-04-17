@@ -171,5 +171,5 @@ public class EntityRobot extends Entity {
     }
 
     long lastAttack = 0;
-    long coolDown = 25;
+    long coolDown = 50;
 }

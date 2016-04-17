@@ -2,6 +2,7 @@ package me.jack.LD35.Shape;
 
 import me.jack.LD35.Entity.Entity;
 import me.jack.LD35.Entity.EntityProjectile;
+import me.jack.LD35.Entity.EntityRobot;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Projectile.Projectile;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class DiamondShape extends Shape {
 
     public DiamondShape() {
-        super(8, 10f, 200, 0, "An upgraded version\nof the default\nshape. Has much\nhigher fire rate.\nThe radius attack\ncauses massive\ndamage");
+        super(8, 10f, 200, 256, "An upgraded version\nof the default\nshape. Has much\nhigher fire rate.\nThe radius attack\ncauses massive\ndamage");
     }
 
     long lastAttack = 0;
@@ -43,7 +44,11 @@ public class DiamondShape extends Shape {
 
     @Override
     public void dealAOEDamage(ArrayList<Entity> hit, me.jack.LD35.Level.Level level) {
-
+        for(Entity e : hit){
+            if(e instanceof EntityRobot) {
+                e.health -= 20;
+            }
+        }
     }
 }
 

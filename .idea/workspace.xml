@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f78dd9-f0c0-40d0-96d6-340237aaf191" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/EntityPlayer.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/EntityPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/EntityRobot.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/Entity/EntityRobot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/DisplayShapeInfo.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/DisplayShapeInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/HealthInfo.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/HealthInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/LevelInfo.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/LevelInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/ShapeSelect.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/GUI/ShapeSelect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/States/InGameState.class" afterPath="$PROJECT_DIR$/out/production/LD35/me/jack/LD35/States/InGameState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/shapeIcons.png" afterPath="$PROJECT_DIR$/res/shapeIcons.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/sprites.png" afterPath="$PROJECT_DIR$/res/sprites.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/tiles.png" afterPath="$PROJECT_DIR$/res/tiles.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityPlayer.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityPlayer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityRobot.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityRobot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/GUI/DisplayShapeInfo.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/GUI/DisplayShapeInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/GUI/HealthInfo.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/GUI/HealthInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/GUI/LevelInfo.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/GUI/LevelInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/GUI/ShapeSelect.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/GUI/ShapeSelect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java" afterPath="$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
     </list>
     <ignored path="LD35.iws" />
@@ -43,18 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InGameState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/States/InGameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DisplayShapeInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/GUI/DisplayShapeInfo.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,21 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todo.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62134504">
-              <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiamondShape.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DiamondShape.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="12" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.20467836">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +66,29 @@
         <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityRobot.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="121" column="14" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
+              <caret line="137" column="9" selection-start-line="131" selection-start-column="40" selection-end-line="137" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shape.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/Shape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OctagonShape.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/OctagonShape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,16 +137,6 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#616#636#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SquareShape.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/SquareShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -221,9 +205,9 @@
         <option value="$PROJECT_DIR$/src/me/jack/LD35/GUI/DisplayShapeInfo.java" />
         <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityPlayer.java" />
         <option value="$PROJECT_DIR$/src/me/jack/LD35/GUI/ShapeSelect.java" />
-        <option value="$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java" />
-        <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityRobot.java" />
         <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityRobot.java" />
+        <option value="$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java" />
       </list>
     </option>
   </component>
@@ -1207,24 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/OctagonShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Level/Level.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1335,26 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityRobot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="14" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LD35.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1365,9 +1311,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62134504">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Entity/EntityRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="9" selection-start-line="131" selection-start-column="40" selection-end-line="137" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/OctagonShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/jack/LD35/Shape/DiamondShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20467836">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
