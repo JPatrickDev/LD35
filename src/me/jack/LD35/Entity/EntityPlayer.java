@@ -3,10 +3,7 @@ package me.jack.LD35.Entity;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.GreenProjectile;
 import me.jack.LD35.Projectile.LaserProjectile;
-import me.jack.LD35.Shape.CircleShape;
-import me.jack.LD35.Shape.OctagonShape;
-import me.jack.LD35.Shape.Shape;
-import me.jack.LD35.Shape.SquareShape;
+import me.jack.LD35.Shape.*;
 import org.lwjgl.input.Keyboard;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -134,6 +131,12 @@ public class EntityPlayer extends Entity {
                 return;
             chargeLevel = 0;
             switchCountdown = 500;
+        }else if(i == 3){
+            newShape = new DiamondShape();
+            if(chargeLevel < newShape.getChargeNeeded())
+                return;
+            chargeLevel = 0;
+            switchCountdown = 300;
         }
         if(newShape == null)return;
         currentShapeObject = newShape;

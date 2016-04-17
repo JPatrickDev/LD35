@@ -20,13 +20,17 @@ public class InGameState extends BasicGameState {
 
     Level level;
 
+    Image bg,overlay;
+
     @Override
     public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
-        gameContainer.setSoundVolume(0.5f);
+        gameContainer.setSoundVolume(0.1f);
         Tile.init();
         SoundEngine.getInstance().addSound("explode",new Sound("res/sounds/explode.wav"));
         SoundEngine.getInstance().addSound("fire",new Sound("res/sounds/fire.wav"));
         SoundEngine.getInstance().addSound("laser",new Sound("res/sounds/laser.wav"));
+        bg  = new Image("res/hudBG.png");
+        overlay = new Image("res/hudOverlay.png");
     }
 
     @Override
@@ -42,6 +46,7 @@ public class InGameState extends BasicGameState {
     @Override
     public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
         level.render(graphics);
+        graphics.drawImage(bg,0,480);
         ShapeSelect.render(graphics, level);
         LevelInfo.render(graphics, level);
         HealthInfo.render(graphics,level);
@@ -50,6 +55,7 @@ public class InGameState extends BasicGameState {
             graphics.fillRect(0,0,800,(30*16));
             graphics.setColor(Color.white);
         }
+        graphics.drawImage(overlay,0,480);
         if(showing != -1)
         DisplayShapeInfo.displayInfo(showing,graphics);
     }

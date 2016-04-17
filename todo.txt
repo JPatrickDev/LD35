@@ -44,7 +44,7 @@ Art for the robot/
 Fire animation/
 
 
-Bottom GUI needs improving
+Bottom GUI needs improving/
 
 
 Player takes damage if he gets touched by a enemy/
@@ -70,7 +70,9 @@ Remove all System.out debug
 
 Main menu
 tutorial
-sound effects
+sound effects/
 
+
+Delay between going gameover and accepting input
 
 

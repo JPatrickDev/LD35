@@ -1,10 +1,7 @@
 package me.jack.LD35.GUI;
 
 import me.jack.LD35.Level.Level;
-import me.jack.LD35.Shape.CircleShape;
-import me.jack.LD35.Shape.OctagonShape;
-import me.jack.LD35.Shape.Shape;
-import me.jack.LD35.Shape.SquareShape;
+import me.jack.LD35.Shape.*;
 import me.jack.LD35.States.InGameState;
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.Rectangle;
@@ -28,6 +25,7 @@ public class ShapeSelect {
         shapes.add(new SquareShape());
         shapes.add(new CircleShape());
         shapes.add(new OctagonShape());
+        shapes.add(new DiamondShape());
         for (int i = 0; i != 5; i++) {
             Rectangle r = new Rectangle(i * 64, 480, 64, 64);
             hitboxLookup.put(r, i);

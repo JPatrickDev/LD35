@@ -76,7 +76,7 @@ public class EntityRobot extends Entity {
             level.entities.remove(this);
             level.getPlayer().chargeLevel+=2;
             level.getPlayer().addExp(1f);
-            if (new Random().nextInt(5) == 0)
+            if (new Random().nextInt(8) == 0)
                 level.entities.add(new EntityHealthDrop(getX(), getY()));
             return;
         }
@@ -105,7 +105,7 @@ public class EntityRobot extends Entity {
             ySpeed = (walkingY - getY());
 
         }
-        float factor = (float) (2 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
+        float factor = (float) (2.5 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
         xSpeed *= factor;
         ySpeed *= factor;
         if (!Float.isNaN(xSpeed))
