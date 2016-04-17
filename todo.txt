@@ -36,9 +36,12 @@ Each shape has a projectile attack and an powerful AOE attack/
 - AOE instantly shifts you back to the default shape/
 
 
-Nice polished GUI for viewing the details about a shape
+Nice polished GUI for viewing the details about a shape/
+
 
 Art for the robot
+
+Bottom GUI needs improving
 
 Circle AOE: Spinning flame?
 

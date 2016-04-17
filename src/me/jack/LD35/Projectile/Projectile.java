@@ -16,13 +16,16 @@ public abstract class Projectile {
     private int lifeSpan;
     private Image image;
     private long fireRate;
-
+    private String name;
+    private Image icon;
     public static SpriteSheet projectileImages;
+    public static SpriteSheet projectileIcons;
 
-    public Projectile(float damage, int moveSpeed, int lifeSpan, int tX,int tY,long fireRate) {
+    public Projectile(float damage, int moveSpeed, int lifeSpan, int tX,int tY,long fireRate,String name) {
         if(projectileImages == null)
             try {
                 projectileImages = new SpriteSheet(new Image("res/projectiles.png"),16,16);
+                projectileIcons = new SpriteSheet(new Image("res/projectileIcons.png"),32,32);
             } catch (SlickException e) {
                 e.printStackTrace();
             }
@@ -31,6 +34,8 @@ public abstract class Projectile {
         this.lifeSpan = lifeSpan;
         this.image = projectileImages.getSprite(tX,tY);
         this.fireRate = fireRate;
+        this.name = name;
+        this.icon = projectileIcons.getSprite(tX,tY);
     }
 
     public abstract void onDestroy(Level level);
@@ -58,4 +63,11 @@ public abstract class Projectile {
         return fireRate;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Image getIcon() {
+        return icon;
+    }
 }

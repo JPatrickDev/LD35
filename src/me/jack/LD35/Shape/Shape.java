@@ -15,11 +15,13 @@ public abstract class Shape {
     private int aoeRadius;
     private float chargeNeeded;
 
-    public Shape(int moveSpeed, float health, float chargeNeeded, int aoeRadius) {
+    private String description;
+    public Shape(int moveSpeed, float health, float chargeNeeded, int aoeRadius,String description) {
         this.moveSpeed = moveSpeed;
         this.health = health;
         this.chargeNeeded = chargeNeeded;
         this.aoeRadius = aoeRadius;
+        this.description = description;
     }
 
     public abstract void attack(int x, int y, Level level);
@@ -42,5 +44,9 @@ public abstract class Shape {
 
     public int getAoeRadius() {
         return aoeRadius;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

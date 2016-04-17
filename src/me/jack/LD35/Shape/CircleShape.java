@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class CircleShape extends Shape{
 
     public CircleShape() {
-        super(12, 15,50,128);
+        super(12, 15,50,128,"Moves faster than\nthe default shape.\nIts weapon\nsets enemies on fire\nas does its radius\nattack.");
     }
 
     long lastAttack = 0;

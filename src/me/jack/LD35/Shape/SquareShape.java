@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class SquareShape extends Shape {
 
     public SquareShape() {
-        super(8, 10f, 1,0);
+        super(8, 10f, 1,0,"The default shape.\nIt automatically\nreceives upgrades\nthroughout the game.\nDoes not have a\nradius attack");
     }
 
     long lastAttack = 0;
