@@ -122,7 +122,7 @@ public class Level {
         }
         particleSystem.update();
 
-        System.out.println("R: " + round + " " + needToSpawn);
+        //System.out.println("R: " + round + " " + needToSpawn);
     }
 
     public boolean canMove(float x, float y, float w, float h) {
@@ -134,7 +134,6 @@ public class Level {
         return true;
     }
     public void keyPressed(int key,char c){
-        System.out.println(c);
         if(c == '1'){
             player.shift(1);
         }else if(c == '2'){

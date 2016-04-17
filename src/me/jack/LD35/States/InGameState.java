@@ -55,7 +55,7 @@ public class InGameState extends BasicGameState {
     @Override
     public void mousePressed(int button, int x, int y) {
         super.mousePressed(button, x, y);
-        //level.clicked(x, y, button);
+        level.clicked(x, y, button);
     }
 
 

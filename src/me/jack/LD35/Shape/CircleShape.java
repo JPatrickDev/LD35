@@ -1,10 +1,14 @@
 package me.jack.LD35.Shape;
 
+import me.jack.LD35.Entity.Entity;
 import me.jack.LD35.Entity.EntityProjectile;
+import me.jack.LD35.Entity.EntityRobot;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.FireballProjectile;
 import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Projectile.Projectile;
+
+import java.util.ArrayList;
 
 /**
  * Created by Jack on 16/04/2016.
@@ -12,7 +16,7 @@ import me.jack.LD35.Projectile.Projectile;
 public class CircleShape extends Shape{
 
     public CircleShape() {
-        super(12, 15,50);
+        super(12, 15,50,128);
     }
 
     long lastAttack = 0;
@@ -29,11 +33,19 @@ public class CircleShape extends Shape{
                 level.entities.add(new EntityProjectile(level.getPlayer().getX(),level.getPlayer().getY(),x,y,t));
             }
         }
-        System.out.println(t.getDamage());
     }
 
     @Override
     public void onSwitch(Level level) {
 
+    }
+
+    @Override
+    public void dealAOEDamage(ArrayList<Entity> hit) {
+        for(Entity e : hit){
+            if(e instanceof EntityRobot){
+                ((EntityRobot)e).onFire = true;
+            }
+        }
     }
 }

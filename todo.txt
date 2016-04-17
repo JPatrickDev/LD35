@@ -31,9 +31,10 @@ Fireball projectile
 - Does no damage but sets what it hits on fire which then deals damage over time/
 - Particle splash for AOE damage/
 
-Each shape has a projectile attack and an powerful AOE attack
-- LMB for projectile, RMB for AOE?
-- AOE instantly shifts you back to the default shape
+Each shape has a projectile attack and an powerful AOE attack/
+- LMB for projectile, RMB for AOE?/
+- AOE instantly shifts you back to the default shape/
+
 
 Nice polished GUI for viewing the details about a shape
 
@@ -60,5 +61,8 @@ Triangle shape
 
 Proper animation for a mob being on fire
 
+Remove all System.out debug
+
+TEST BUILD AROUND 5*******************
 
 

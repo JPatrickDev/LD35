@@ -6,9 +6,12 @@ import me.jack.LD35.Shape.CircleShape;
 import me.jack.LD35.Shape.Shape;
 import me.jack.LD35.Shape.SquareShape;
 import org.lwjgl.input.Keyboard;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.geom.Circle;
 import org.newdawn.slick.geom.Rectangle;
+import org.w3c.dom.css.Rect;
 
 import java.util.ArrayList;
 
@@ -63,7 +66,7 @@ public class EntityPlayer extends Entity {
         }
 
         if(health <=0){
-            System.out.println("gg");
+           // System.out.println("gg");
         }
 
         switchCountdown--;
@@ -77,10 +80,24 @@ public class EntityPlayer extends Entity {
     }
 
     public void mouseClick(int x,int y, int button,Level level){
-        currentShapeObject.attack(x,y,level);
+        if(button == 1 && currentShape != 0){
+            Circle effectArea = new Circle(getX(),getY(),currentShapeObject.getAoeRadius());
+            ArrayList<Entity> hit = new ArrayList<>();
+            for(Entity e : level.entities){
+                if(e instanceof  EntityRobot){
+                    Rectangle r = new Rectangle(e.getX(),e.getY(),e.getW(),e.getH());
+                    if(r.intersects(effectArea)){
+                        hit.add(e);
+                    }
+                }
+            }
+            currentShapeObject.dealAOEDamage(hit);
+            shift(1);
+        }
     }
 
     public void shift(int i) {
+        System.out.println("Shifting: " + i);
         i-=1;
         if(i > level)
             return;
@@ -91,8 +108,6 @@ public class EntityPlayer extends Entity {
         Shape newShape = null;
         if(i == 0) {
             newShape = new SquareShape();
-            if(chargeLevel < newShape.getChargeNeeded())
-                return;
         }
         else if(i == 1) {
             newShape = new CircleShape();
