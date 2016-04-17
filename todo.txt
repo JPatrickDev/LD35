@@ -54,7 +54,7 @@ Game over screen for when the player dies/
     - Needs improving***
 
 Multiple enemy types
-    - ranged
+    - ranged/
     - More health
 
 

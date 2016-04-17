@@ -1,6 +1,7 @@
 package me.jack.LD35.Entity;
 
 import me.jack.LD35.Level.Level;
+import me.jack.LD35.Projectile.GreenProjectile;
 import me.jack.LD35.Projectile.Projectile;
 import org.newdawn.slick.Graphics;
 
@@ -47,7 +48,7 @@ public class EntityProjectile extends Entity{
     }
 
     public void hitEntity(Entity entity,Level level) {
-        if(entity instanceof EntityRobot){
+        if(entity instanceof EntityRobot && !(this.projectile instanceof GreenProjectile)){
             entity.health-=projectile.getDamage();
             life = 0;
             projectile.onCollideWithEntity(level,entity);

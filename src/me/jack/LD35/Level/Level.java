@@ -20,7 +20,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Level {
 
     private int[][] tiles;
-    private int width, height;
+    public int width;
+    public int height;
 
     public ArrayList<Rectangle> hitboxes = new ArrayList<>();
 
