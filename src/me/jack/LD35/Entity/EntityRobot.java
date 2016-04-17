@@ -82,7 +82,6 @@ public class EntityRobot extends Entity {
             }else if(level.round > 60 ){
                 health = 40;
             }
-            System.out.println(level.round + ":" + health);
             first = false;
         }
         if (health <= 0) {

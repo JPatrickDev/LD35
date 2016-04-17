@@ -1,5 +1,6 @@
 package me.jack.LD35.States;
 
+import me.jack.LD35.Level.Level;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -21,10 +22,15 @@ public class GameOverState extends BasicGameState{
     }
 
     boolean go = false;
+    static Level level;
     @Override
     public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
-        graphics.drawString("gg",50,50);
-        graphics.drawString("Press any key to play again",50,70);
+        graphics.drawString("GAME OVER!",50,50);
+        graphics.drawString("Round: " + level.round,50,65);
+        graphics.drawString("Level: " + level.getPlayer().level,50,80);
+        int score = (int) (2*(level.round*level.round) + 5*level.getPlayer().level + 5);
+        graphics.drawString("Score: " + score,50,95);
+        graphics.drawString("Press any key to play again",50,110);
     }
 
     @Override

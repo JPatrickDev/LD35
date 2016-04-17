@@ -26,7 +26,7 @@ public class ShapeSelect {
         shapes.add(new CircleShape());
         shapes.add(new OctagonShape());
         shapes.add(new DiamondShape());
-        for (int i = 0; i != 5; i++) {
+        for (int i = 0; i != 4; i++) {
             Rectangle r = new Rectangle(i * 64, 480, 64, 64);
             hitboxLookup.put(r, i);
         }
@@ -46,8 +46,8 @@ public class ShapeSelect {
                 iconImages.add(icons.getSprite(i, 0));
             }
         }
-        g.fillRect(0, 480, 320, 64);
-        for (int i = 0; i != 5; i++) {
+        g.fillRect(0, 480, 256, 64);
+        for (int i = 0; i != 4; i++) {
             g.setColor(Color.black);
             g.drawRect(i * 64, 480, 64, 64);
             g.drawImage(iconImages.get(i), i * 64, 480);

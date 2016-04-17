@@ -72,6 +72,7 @@ public class InGameState extends BasicGameState {
             }
             if(level.getPlayer().health <= 0){
                 stateBasedGame.enterState(2);
+                GameOverState.level = level;
             }
         }
     }

@@ -107,7 +107,6 @@ public class EntityPlayer extends Entity {
     }
 
     public void shift(int i) {
-        System.out.println("Shifting: " + i);
         i-=1;
         if(i > level)
             return;

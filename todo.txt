@@ -61,15 +61,12 @@ Everything needs balancing/(ish)
 
 Rotate projectiles so they face the direction of travel/
 
-Triangle shape
-- Knock back AOE
-- Wind projectile
 
 
 Remove all System.out debug
 
-Main menu
-tutorial
+Main menu/
+tutorial/
 sound effects/
 
 
@@ -78,7 +75,7 @@ Delay between going gameover and accepting input
 Diamond AOE/
 
 
-Increase the robots health over time
+Increase the robots health over time/
 
 Show a score at the game over screen
 
