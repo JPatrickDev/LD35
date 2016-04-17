@@ -22,6 +22,11 @@ public class InGameState extends BasicGameState {
     @Override
     public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
         Tile.init();
+    }
+
+    @Override
+    public void enter(GameContainer container, StateBasedGame game) throws SlickException {
+        super.enter(container, game);
         level = new Level(50, 30);
 
     }
@@ -53,6 +58,9 @@ public class InGameState extends BasicGameState {
             if (Mouse.isButtonDown(0)) {
                 Input in = gameContainer.getInput();
                 level.pressed(in.getMouseX(), in.getMouseY(), 0);
+            }
+            if(level.getPlayer().health <= 0){
+                stateBasedGame.enterState(2);
             }
         }
     }

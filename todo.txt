@@ -49,8 +49,9 @@ Bottom GUI needs improving
 Circle AOE: Spinning flame?
 
 Player takes damage if he gets touched by a enemy/
-Player can die ***
-Game over screen for when the player dies**
+Player can die/
+Game over screen for when the player dies/
+    - Needs improving***
 
 Multiple enemy types
     - ranged
@@ -65,7 +66,6 @@ Triangle shape
 - Knock back AOE
 - Wind projectile
 
-Proper animation for a mob being on fire
 
 Remove all System.out debug
 
