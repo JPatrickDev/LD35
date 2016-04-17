@@ -40,7 +40,7 @@ Nice polished GUI for viewing the details about a shape/
 
 
 Art for the robot/
-    - Art for the different sides
+    - Art for the different sides/
 Fire animation/
 
 
@@ -69,6 +69,5 @@ Triangle shape
 
 Remove all System.out debug
 
-TEST BUILD AROUND 5*******************
 
 

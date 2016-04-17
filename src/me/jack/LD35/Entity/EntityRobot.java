@@ -17,15 +17,22 @@ import java.util.Random;
  */
 public class EntityRobot extends Entity {
 
-    static Image blueRobot, greenRobot;
+    static SpriteSheet blueRobot, greenRobot;
     Animation fireAnim;
     public boolean onFire = false;
     int type = 0;
 
+    Image[] images = new Image[4];
+
     public EntityRobot(float x, float y) {
         super(x, y, 16, 16);
-        blueRobot = sprites.getSprite(3, 0);
-        greenRobot = sprites.getSprite(4, 0);
+        try {
+            blueRobot = new SpriteSheet(new Image("res/blueRobot.png"),16,16);
+            greenRobot = new SpriteSheet(new Image("res/greenRobot.png"),16,16);
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
+
         if (fireAnim == null)
             try {
                 fireAnim = new Animation(new SpriteSheet("res/fireAnimation.png", 16, 16), 150);
@@ -35,14 +42,25 @@ public class EntityRobot extends Entity {
         Random r = new Random();
         if (r.nextInt(5) == 0)
             type = 1;
+
+        if(type == 0){
+            images[0] = blueRobot.getSprite(0,0);
+            images[1] = blueRobot.getSprite(0,1);
+
+            images[2] = blueRobot.getSprite(1,0);
+            images[3] = blueRobot.getSprite(1,1);
+        }else{
+            images[0] = greenRobot.getSprite(0,0);
+            images[1] = greenRobot.getSprite(0,1);
+
+            images[2] = greenRobot.getSprite(1,0);
+            images[3] = greenRobot.getSprite(1,1);
+        }
     }
 
     @Override
     public void render(Graphics g) {
-        if (type == 0)
-            g.drawImage(blueRobot, getX(), getY());
-        else
-            g.drawImage(greenRobot, getX(), getY());
+        g.drawImage(images[imgPos],getX(),getY());
         if (onFire) {
             fireAnim.draw(getX(), getY());
         }
@@ -51,6 +69,7 @@ public class EntityRobot extends Entity {
     int walkingX = -1, walkingY;
     Random r = new Random();
 
+    int imgPos = 0;
     @Override
     public void update(Level level) {
         if (health <= 0) {
@@ -93,6 +112,21 @@ public class EntityRobot extends Entity {
             addX(xSpeed);
         if (!Float.isNaN(ySpeed))
             addY(ySpeed);
+
+        if(Math.abs(xSpeed) > Math.abs(ySpeed)){
+                if(xSpeed > 0){
+                    imgPos = 3;
+                }else{
+                    imgPos = 2;
+                }
+        }else{
+            if(ySpeed > 0){
+                imgPos = 0;
+            }else{
+                imgPos = 1;
+            }
+        }
+
         Rectangle rr = new Rectangle(getX(), getY(), 16, 16);
 
         for (Entity e : level.entities) {
@@ -128,7 +162,7 @@ public class EntityRobot extends Entity {
         }
 
         if (type == 1) {
-            if (r.nextInt(200) == 0) {
+            if (r.nextInt(600) == 0) {
                 level.entities.add(new EntityProjectile(getX(), getY(), (int) p.getX(), (int) p.getY(), new GreenProjectile()));
             }
         }

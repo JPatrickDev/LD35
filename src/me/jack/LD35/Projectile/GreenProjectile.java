@@ -9,7 +9,7 @@ import me.jack.LD35.Level.Level;
 public class GreenProjectile extends Projectile{
 
     public GreenProjectile() {
-        super(10f, 4, 50, 0,1, 500, "Green Bullet");
+        super(10f, 3, 50, 0,1, 500, "Green Bullet");
     }
 
     @Override

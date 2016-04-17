@@ -99,7 +99,7 @@ public class Level {
                     sY = r.nextInt(height-2) + 1;
                     sY*=Tile.TILE_SIZE;
                 }else{
-                    sX = (width-1) * Tile.TILE_SIZE;
+                    sX = (width-2) * Tile.TILE_SIZE;
                     sY = r.nextInt(height-2) + 1;
                     sY*=Tile.TILE_SIZE;
                 }
@@ -109,7 +109,7 @@ public class Level {
                     sX = r.nextInt(width-2) + 1;
                     sX*=Tile.TILE_SIZE;
                 }else{
-                    sY = (height-1) * Tile.TILE_SIZE;
+                    sY = (height-2) * Tile.TILE_SIZE;
                     sX = r.nextInt(width-2) + 1;
                     sX*=Tile.TILE_SIZE;
                 }

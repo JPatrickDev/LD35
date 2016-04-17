@@ -1,6 +1,7 @@
 package me.jack.LD35.Entity;
 
 import me.jack.LD35.Level.Level;
+import me.jack.LD35.Projectile.GreenProjectile;
 import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Shape.CircleShape;
 import me.jack.LD35.Shape.OctagonShape;
@@ -77,6 +78,17 @@ public class EntityPlayer extends Entity {
             }
         }
 
+        Rectangle me = new Rectangle(getX(),getY(),getW(),getH());
+        for(Entity e : level.entities){
+            if(e instanceof EntityProjectile){
+                Rectangle rr = new Rectangle(e.getX(),e.getY(),e.getW(),e.getH());
+               if(((EntityProjectile)e).projectile instanceof GreenProjectile && me.intersects(rr)){
+
+                   health-=5;
+                   level.entities.remove(e);
+               }
+            }
+        }
 
     }
 
