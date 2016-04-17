@@ -46,7 +46,6 @@ Fire animation/
 
 Bottom GUI needs improving
 
-Circle AOE: Spinning flame?
 
 Player takes damage if he gets touched by a enemy/
 Player can die/
@@ -58,7 +57,7 @@ Multiple enemy types
     - More health
 
 
-Everything needs balancing
+Everything needs balancing/(ish)
 
 Rotate projectiles so they face the direction of travel/
 
@@ -68,6 +67,10 @@ Triangle shape
 
 
 Remove all System.out debug
+
+Main menu
+tutorial
+sound effects
 
 
 

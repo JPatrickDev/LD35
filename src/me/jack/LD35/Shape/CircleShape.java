@@ -41,7 +41,7 @@ public class CircleShape extends Shape{
     }
 
     @Override
-    public void dealAOEDamage(ArrayList<Entity> hit) {
+    public void dealAOEDamage(ArrayList<Entity> hit,Level level) {
         for(Entity e : hit){
             if(e instanceof EntityRobot){
                 ((EntityRobot)e).onFire = true;

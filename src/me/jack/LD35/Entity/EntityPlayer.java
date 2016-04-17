@@ -104,7 +104,7 @@ public class EntityPlayer extends Entity {
                     }
                 }
             }
-            currentShapeObject.dealAOEDamage(hit);
+            currentShapeObject.dealAOEDamage(hit,level);
             shift(1);
         }
     }

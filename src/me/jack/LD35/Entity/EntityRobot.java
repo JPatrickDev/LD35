@@ -74,9 +74,9 @@ public class EntityRobot extends Entity {
     public void update(Level level) {
         if (health <= 0) {
             level.entities.remove(this);
-            level.getPlayer().chargeLevel++;
-            level.getPlayer().addExp(0.5f);
-            if (new Random().nextInt(10) == 0)
+            level.getPlayer().chargeLevel+=2;
+            level.getPlayer().addExp(1f);
+            if (new Random().nextInt(5) == 0)
                 level.entities.add(new EntityHealthDrop(getX(), getY()));
             return;
         }
@@ -105,7 +105,7 @@ public class EntityRobot extends Entity {
             ySpeed = (walkingY - getY());
 
         }
-        float factor = (float) (2 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
+        float factor = (float) (4 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
         xSpeed *= factor;
         ySpeed *= factor;
         if (!Float.isNaN(xSpeed))
@@ -157,7 +157,7 @@ public class EntityRobot extends Entity {
         Rectangle eRectangle = new Rectangle((int) getX(), (int) getY(), 16, 16);
         Rectangle pRectangle = new Rectangle((int) level.getPlayer().getX(), (int) level.getPlayer().getY(), 16, 16);
         if (eRectangle.intersects(pRectangle) && System.currentTimeMillis() - lastAttack >= coolDown) {
-            level.getPlayer().health -= 0.5;
+            level.getPlayer().health -= 1;
             lastAttack = System.currentTimeMillis();
         }
 
@@ -171,5 +171,5 @@ public class EntityRobot extends Entity {
     }
 
     long lastAttack = 0;
-    long coolDown = 100;
+    long coolDown = 5;
 }

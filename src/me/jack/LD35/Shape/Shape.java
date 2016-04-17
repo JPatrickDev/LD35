@@ -28,7 +28,7 @@ public abstract class Shape {
 
     public abstract void onSwitch(Level level);
 
-    public abstract void dealAOEDamage(ArrayList<Entity> hit);
+    public abstract void dealAOEDamage(ArrayList<Entity> hit,Level level);
 
     public int getMoveSpeed() {
         return moveSpeed;

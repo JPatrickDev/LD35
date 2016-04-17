@@ -41,7 +41,7 @@ public class SquareShape extends Shape {
     }
 
     @Override
-    public void dealAOEDamage(ArrayList<Entity> hit) {
+    public void dealAOEDamage(ArrayList<Entity> hit,Level level) {
 
     }
 }
