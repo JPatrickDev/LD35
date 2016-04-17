@@ -10,9 +10,10 @@
 
 GUI for showing current EXP and level/
 
-- Enemies drop something that works towards "charging up" the unlocked shape for use*****
 
-- Shapes only last a set period of time******
+- Shapes only last a set period of time/
+
+- Shapes need charging up before being used/
 
 - The default shape gets more powerful over time
 
@@ -32,3 +33,14 @@ Each shape has a projectile attack and an powerful AOE attack
 Game over screen for when the player dies
 
 Circle AOE: Spinning flame?
+
+Player takes damage if he gets touched by a enemy***
+Player can die ***
+
+Multiple enemy types
+    - ranged
+    - More health
+
+
+Everything needs balancing
+

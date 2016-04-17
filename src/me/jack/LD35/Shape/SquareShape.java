@@ -10,7 +10,7 @@ import me.jack.LD35.Projectile.LaserProjectile;
 public class SquareShape extends Shape{
 
     public SquareShape() {
-        super(8, 10f);
+        super(8, 10f,1);
     }
 
     @Override

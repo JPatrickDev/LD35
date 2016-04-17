@@ -1,6 +1,9 @@
 package me.jack.LD35.GUI;
 
 import me.jack.LD35.Level.Level;
+import me.jack.LD35.Shape.CircleShape;
+import me.jack.LD35.Shape.Shape;
+import me.jack.LD35.Shape.SquareShape;
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
@@ -13,7 +16,12 @@ public class ShapeSelect{
     static SpriteSheet icons;
     static SpriteSheet guiElements;
     static ArrayList<Image> iconImages = new ArrayList<Image>();
+    static ArrayList<Shape> shapes = new ArrayList<Shape>();
     static Image selected,locked;
+    static{
+        shapes.add(new SquareShape());
+        shapes.add(new CircleShape());
+    }
     public static void render(Graphics g, Level level){
         if(icons == null){
             try {
@@ -37,6 +45,14 @@ public class ShapeSelect{
             g.drawString((i+1) + "",i*64,548);
             if(level.getPlayer().level < i){
                 g.drawImage(locked,i*64,480);
+            }
+            if(i != 0 && i < shapes.size()){
+                g.setColor(Color.red);
+                float factor = level.getPlayer().getCharge()/shapes.get(i).getChargeNeeded();
+                if(factor > 1)
+                    factor = 1;
+                g.fillRect(i*64,538,64*factor,10);
+                g.setColor(Color.white);
             }
         }
         g.drawImage(selected,level.getPlayer().currentShape * 64,480);

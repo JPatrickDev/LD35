@@ -8,6 +8,7 @@ import me.jack.LD35.Shape.SquareShape;
 import org.lwjgl.input.Keyboard;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.geom.Rectangle;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,10 @@ public class EntityPlayer extends Entity {
     private float exp;
     public float level;
     private float nextLevel = 20;
+
+    protected float chargeLevel = 0f;
+
+    int switchCountdown = 0;
     public EntityPlayer(float x, float y) {
         super(x, y, 16, 16);
 
@@ -59,6 +64,15 @@ public class EntityPlayer extends Entity {
         if(health <=0){
             //gg
         }
+
+        switchCountdown--;
+        if(switchCountdown <= 0){
+            if(currentShape != 0){
+                shift(1);
+            }
+        }
+
+
     }
 
     public void mouseClick(int x,int y, int button,Level level){
@@ -72,23 +86,34 @@ public class EntityPlayer extends Entity {
         if(currentShape == i)
             return;
 
-        currentShape = i;
-        if(i == 0)
-            currentShapeObject = new SquareShape();
-        else if(i == 1)
-            currentShapeObject = new CircleShape();
 
+        Shape newShape = null;
+        if(i == 0) {
+            newShape = new SquareShape();
+            if(chargeLevel < newShape.getChargeNeeded())
+                return;
+        }
+        else if(i == 1) {
+            newShape = new CircleShape();
+            if(chargeLevel < newShape.getChargeNeeded())
+                return;
+            chargeLevel = 0;
+            switchCountdown = 500;
+        }
+        if(newShape == null)return;
+        currentShapeObject = newShape;
         this.health = currentShapeObject.getHealth();
-
+        currentShape = i;
     }
 
-    public void addExp(int exp) {
+    public void addExp(float exp) {
         this.exp+=exp;
         if(this.exp>(level*level) + 20){
             level++;
             this.exp = 0;
             nextLevel = level*level + 20;
         }
+
     }
 
     public float getExp() {
@@ -101,5 +126,9 @@ public class EntityPlayer extends Entity {
 
     public float getLevel() {
         return level;
+    }
+
+    public float getCharge() {
+        return chargeLevel;
     }
 }

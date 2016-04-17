@@ -11,7 +11,7 @@ import me.jack.LD35.Projectile.LaserProjectile;
 public class CircleShape extends Shape{
 
     public CircleShape() {
-        super(12, 15);
+        super(12, 15,50);
     }
 
     @Override
