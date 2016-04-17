@@ -3,9 +3,7 @@ package me.jack.LD35.Entity;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Particles.FireParticle;
 import org.lwjgl.input.Keyboard;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
+import org.newdawn.slick.*;
 import org.newdawn.slick.geom.Rectangle;
 import uk.co.jdpatrick.JEngine.Particle.Particle;
 
@@ -16,21 +14,25 @@ import java.util.Random;
  */
 public class EntityRobot extends Entity{
 
-    Image image;
-
+    static Image image;
+     Animation fireAnim;
     public boolean onFire = false;
     public EntityRobot(float x, float y) {
         super(x, y, 16, 16);
         image = sprites.getSprite(3, 0);
+        if(fireAnim == null)
+            try {
+                fireAnim = new Animation(new SpriteSheet("res/fireAnimation.png",16,16),150);
+            } catch (SlickException e) {
+                e.printStackTrace();
+            }
     }
 
     @Override
     public void render(Graphics g) {
         g.drawImage(image, getX(), getY());
         if(onFire){
-            g.setColor(Color.red);
-            g.fillRect(getX(),getY(),getW(),getH());
-            g.setColor(Color.white);
+            fireAnim.draw(getX(),getY());
         }
     }
 
@@ -73,7 +75,7 @@ public class EntityRobot extends Entity{
                 level.entities.add(new EntityHealthDrop(getX(),getY()));
         }
         if(onFire)
-            health-=0.5f;
+            health-=0.1f;
 
         Rectangle eRectangle = new Rectangle((int) getX(), (int) getY(), 16, 16);
         Rectangle pRectangle = new Rectangle((int) level.getPlayer().getX(), (int) level.getPlayer().getY(), 16, 16);
