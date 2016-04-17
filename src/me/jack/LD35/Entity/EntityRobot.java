@@ -79,8 +79,12 @@ public class EntityRobot extends Entity{
 
         Rectangle eRectangle = new Rectangle((int) getX(), (int) getY(), 16, 16);
         Rectangle pRectangle = new Rectangle((int) level.getPlayer().getX(), (int) level.getPlayer().getY(), 16, 16);
-        if (eRectangle.intersects(pRectangle)) {
+        if (eRectangle.intersects(pRectangle) && System.currentTimeMillis() - lastAttack >= coolDown) {
             level.getPlayer().health-=0.5;
+            lastAttack = System.currentTimeMillis();
         }
     }
+
+    long lastAttack = 0;
+    long coolDown = 100;
 }
