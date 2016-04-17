@@ -17,8 +17,8 @@ public class LevelInfo {
         g.setColor(Color.white);
         float percentage = level.getPlayer().getExp()/level.getPlayer().getExpToNextLevel();
         g.fillRect(320,480,100*percentage,16);
-        g.drawString(level.getPlayer().getExp() + "/" + level.getPlayer().getExpToNextLevel(),420,480);
-        g.drawString("Level:" + ((int)level.getPlayer().getLevel()+1),420,500);
+        g.drawString(level.getPlayer().getExp() + "/" + level.getPlayer().getExpToNextLevel(),320,495);
+        g.drawString("Level:" + ((int)level.getPlayer().getLevel()+1),320,510);
 
     }
 }

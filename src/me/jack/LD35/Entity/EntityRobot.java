@@ -70,5 +70,11 @@ public class EntityRobot extends Entity{
         }
         if(onFire)
             health-=0.5f;
+
+        Rectangle eRectangle = new Rectangle((int) getX(), (int) getY(), 16, 16);
+        Rectangle pRectangle = new Rectangle((int) level.getPlayer().getX(), (int) level.getPlayer().getY(), 16, 16);
+        if (eRectangle.intersects(pRectangle)) {
+            level.getPlayer().health-=0.5;
+        }
     }
 }

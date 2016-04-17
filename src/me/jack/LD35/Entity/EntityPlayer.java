@@ -35,6 +35,7 @@ public class EntityPlayer extends Entity {
         for(int i = 0;i!= 4;i++){
             spriteArray.add(sprites.getSprite(i,0));
         }
+        health = 100;
     }
 
     @Override
@@ -62,7 +63,7 @@ public class EntityPlayer extends Entity {
         }
 
         if(health <=0){
-            //gg
+            System.out.println("gg");
         }
 
         switchCountdown--;

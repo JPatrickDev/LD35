@@ -29,6 +29,8 @@ public class Level {
     EntityPlayer player;
     public CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList<>();
 
+    public int round = 1;
+    public int needToSpawn = 5;
     public Level(int width, int height) {
         this.width = width;
         this.height = height;
@@ -88,11 +90,41 @@ public class Level {
         e.update(this);
         player.update(this);
 
-        if(r.nextInt(5) == 0){
-            entities.add(new EntityRobot(r.nextInt(400),r.nextInt(400)));
+        if(r.nextInt((int) (10 + Math.pow(round,2))) == 0 && needToSpawn > 0){
+            int sX = 0,sY = 0;
+            if(r.nextBoolean()){
+                if(r.nextBoolean()){
+                    sX = 0;
+                    sY = r.nextInt(height-2) + 1;
+                    sY*=Tile.TILE_SIZE;
+                }else{
+                    sX = (width-1) * Tile.TILE_SIZE;
+                    sY = r.nextInt(height-2) + 1;
+                    sY*=Tile.TILE_SIZE;
+                }
+            }else{
+                if(r.nextBoolean()){
+                    sY = 0;
+                    sX = r.nextInt(width-2) + 1;
+                    sX*=Tile.TILE_SIZE;
+                }else{
+                    sY = (height-1) * Tile.TILE_SIZE;
+                    sX = r.nextInt(width-2) + 1;
+                    sX*=Tile.TILE_SIZE;
+                }
+            }
+            entities.add(new EntityRobot(sX,sY));
+            needToSpawn--;
+        }
+        if(needToSpawn <= 0){
+            round++;
+            needToSpawn = (int) Math.pow(round,2);
         }
         particleSystem.update();
+
+        System.out.println("R: " + round + " " + needToSpawn);
     }
+
     public boolean canMove(float x, float y, float w, float h) {
         Rectangle checking = new Rectangle((int)x, (int)y, (int)w, (int)h);
         for (Rectangle hitbox : hitboxes) {

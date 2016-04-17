@@ -15,9 +15,11 @@ GUI for showing current EXP and level/
 
 - Shapes need charging up before being used/
 
+- Round based system with enemies spawning/
+
 - The default shape gets more powerful over time
 
-- Round based system with enemies spawning
+
 
 - Particles/
 
@@ -29,13 +31,15 @@ Each shape has a projectile attack and an powerful AOE attack
 - LMB for projectile, RMB for AOE?
 - AOE instantly shifts you back to the default shape
 
+Nice polished GUI for viewing the details about a shape
 
-Game over screen for when the player dies
+Art for the robot
 
 Circle AOE: Spinning flame?
 
-Player takes damage if he gets touched by a enemy***
+Player takes damage if he gets touched by a enemy/
 Player can die ***
+Game over screen for when the player dies**
 
 Multiple enemy types
     - ranged
@@ -43,4 +47,14 @@ Multiple enemy types
 
 
 Everything needs balancing
+
+Rotate projectiles so they face the direction of travel
+
+Triangle shape
+- Knock back AOE
+- Wind projectile
+
+Proper animation for a mob being on fire
+
+
 
