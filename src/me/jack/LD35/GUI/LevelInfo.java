@@ -11,7 +11,7 @@ public class LevelInfo {
 
     public static void render(Graphics g, Level level){
         g.setColor(Color.red);
-        g.fillRect(320,480,480,64);
+        g.fillRect(320,480,100,64);
         g.setColor(Color.black);
         g.fillRect(320,480,100,16);
         g.setColor(Color.white);

@@ -11,7 +11,7 @@ import me.jack.LD35.Particles.FireParticle;
 public class FireballProjectile extends Projectile{
 
     public FireballProjectile() {
-        super(0f, 5, 50,1,0,500);
+        super(0f, 5, 50,1,0,100);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class FireballProjectile extends Projectile{
     public void onCollideWithEntity(Level level,Entity entity) {
         if(entity instanceof EntityRobot){
             ((EntityRobot)entity).onFire = true;
-            for(int i =0 ;i!= 100;i++)
+            for(int i =0 ;i!= 300;i++)
             level.particleSystem.addParticle(new FireParticle((int)entity.getX(),(int)entity.getY()));
         }
 

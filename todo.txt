@@ -23,7 +23,7 @@ GUI for showing current EXP and level/
     - Over time = every X rounds?/
 
 
-- Some method of health regen
+- Some method of health regen/
 
 - Particles/
 

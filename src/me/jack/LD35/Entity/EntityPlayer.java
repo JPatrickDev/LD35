@@ -103,7 +103,6 @@ public class EntityPlayer extends Entity {
         }
         if(newShape == null)return;
         currentShapeObject = newShape;
-        this.health = currentShapeObject.getHealth();
         currentShape = i;
     }
 

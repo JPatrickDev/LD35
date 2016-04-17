@@ -14,7 +14,7 @@ public abstract class Entity {
     private int w, h;
 
     public static SpriteSheet sprites;
-    float health = 10f;
+    public float health = 10f;
     public Entity(float x, float y, int w, int h) {
         if (sprites == null)
             try {

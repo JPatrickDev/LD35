@@ -9,6 +9,8 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Rectangle;
 import uk.co.jdpatrick.JEngine.Particle.Particle;
 
+import java.util.Random;
+
 /**
  * Created by Jack on 16/04/2016.
  */
@@ -67,6 +69,8 @@ public class EntityRobot extends Entity{
             level.entities.remove(this);
             level.getPlayer().chargeLevel++;
             level.getPlayer().addExp(0.5f);
+            if(new Random().nextInt(10) == 0)
+                level.entities.add(new EntityHealthDrop(getX(),getY()));
         }
         if(onFire)
             health-=0.5f;

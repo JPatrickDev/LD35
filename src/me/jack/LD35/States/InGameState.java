@@ -1,6 +1,7 @@
 package me.jack.LD35.States;
 
 import me.jack.LD35.Entity.EntityRobot;
+import me.jack.LD35.GUI.HealthInfo;
 import me.jack.LD35.GUI.LevelInfo;
 import me.jack.LD35.GUI.ShapeSelect;
 import me.jack.LD35.Level.Level;
@@ -32,6 +33,7 @@ public class InGameState extends BasicGameState {
         level.render(graphics);
         ShapeSelect.render(graphics, level);
         LevelInfo.render(graphics, level);
+        HealthInfo.render(graphics,level);
     }
 
     @Override
