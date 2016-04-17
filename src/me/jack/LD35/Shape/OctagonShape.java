@@ -4,8 +4,8 @@ import me.jack.LD35.Entity.Entity;
 import me.jack.LD35.Entity.EntityProjectile;
 import me.jack.LD35.Entity.EntityRobot;
 import me.jack.LD35.Level.Level;
-import me.jack.LD35.Projectile.FireballProjectile;
 import me.jack.LD35.Projectile.Projectile;
+import me.jack.LD35.Projectile.MissileProjectile;
 
 import java.util.ArrayList;
 
@@ -14,13 +14,13 @@ import java.util.ArrayList;
  */
 public class OctagonShape extends Shape{
     public OctagonShape() {
-        super(8, 15,100,128,"Moves faster than\nthe default shape.\nIts weapon\nsets enemies on fire\nas does its radius\nattack.");
+        super(8, 15,100,128,"Fires a powerful\nmissile. It's radius\nattack is able to\nheal the player.");
     }
 
     long lastAttack = 0;
     @Override
     public void attack(int x, int y, Level level) {
-        Projectile t = new FireballProjectile();
+        Projectile t = new MissileProjectile();
         if (lastAttack == 0) {
             lastAttack = System.currentTimeMillis();
             level.entities.add(new EntityProjectile(level.getPlayer().getX(),level.getPlayer().getY(),x,y,t));

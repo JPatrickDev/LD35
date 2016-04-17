@@ -76,4 +76,7 @@ public abstract class Particle {
     public Shape getHitbox() {
         return particle;
     }
+
+    public boolean remove = false;
 }
+

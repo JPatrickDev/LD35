@@ -3,6 +3,7 @@ package me.jack.LD35.GUI;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.FireballProjectile;
 import me.jack.LD35.Projectile.LaserProjectile;
+import me.jack.LD35.Projectile.MissileProjectile;
 import me.jack.LD35.Projectile.Projectile;
 import me.jack.LD35.Shape.CircleShape;
 import me.jack.LD35.Shape.OctagonShape;
@@ -34,7 +35,7 @@ public class DisplayShapeInfo {
 
         projectiles.add(new LaserProjectile(100,0));
         projectiles.add(new FireballProjectile());
-        projectiles.add(new FireballProjectile());
+        projectiles.add(new MissileProjectile());
     }
     public static void displayInfo(int shape, Graphics g){
         if(!displaying){

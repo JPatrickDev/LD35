@@ -2,6 +2,7 @@ package me.jack.LD35.Entity;
 
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Level.Tile.Tile;
+import me.jack.LD35.Particles.ExplosionParticle;
 import me.jack.LD35.Particles.FireParticle;
 import me.jack.LD35.Projectile.GreenProjectile;
 import org.lwjgl.input.Keyboard;
@@ -31,8 +32,8 @@ public class EntityRobot extends Entity {
             } catch (SlickException e) {
                 e.printStackTrace();
             }
-        Random r= new Random();
-        if(r.nextInt(5) == 0)
+        Random r = new Random();
+        if (r.nextInt(5) == 0)
             type = 1;
     }
 
@@ -47,33 +48,42 @@ public class EntityRobot extends Entity {
         }
     }
 
-    int walkingX = -1,walkingY;
+    int walkingX = -1, walkingY;
     Random r = new Random();
+
     @Override
     public void update(Level level) {
+        if (health <= 0) {
+            level.entities.remove(this);
+            level.getPlayer().chargeLevel++;
+            level.getPlayer().addExp(0.5f);
+            if (new Random().nextInt(10) == 0)
+                level.entities.add(new EntityHealthDrop(getX(), getY()));
+            return;
+        }
         EntityPlayer p = level.getPlayer();
         float xSpeed = (p.getX() - getX());
         float ySpeed = (p.getY() - getY());
 
 
-        if(type == 0) {
+        if (type == 0) {
 
-        }else{
-            if(walkingX == -1){
-                walkingX = r.nextInt(level.width-2) + 1;
-                walkingY = r.nextInt(level.height-2) + 1;
-                walkingX*= Tile.TILE_SIZE;
+        } else {
+            if (walkingX == -1) {
+                walkingX = r.nextInt(level.width - 2) + 1;
+                walkingY = r.nextInt(level.height - 2) + 1;
+                walkingX *= Tile.TILE_SIZE;
                 walkingY *= Tile.TILE_SIZE;
-            }else{
-                if(r.nextInt(20) == 0){
-                    walkingX = r.nextInt(level.width-2) + 1;
-                    walkingY = r.nextInt(level.height-2) + 1;
-                    walkingX*= Tile.TILE_SIZE;
+            } else {
+                if (r.nextInt(20) == 0) {
+                    walkingX = r.nextInt(level.width - 2) + 1;
+                    walkingY = r.nextInt(level.height - 2) + 1;
+                    walkingX *= Tile.TILE_SIZE;
                     walkingY *= Tile.TILE_SIZE;
                 }
             }
-             xSpeed = (walkingX - getX());
-             ySpeed = (walkingY - getY());
+            xSpeed = (walkingX - getX());
+            ySpeed = (walkingY - getY());
 
         }
         float factor = (float) (2 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
@@ -98,14 +108,15 @@ public class EntityRobot extends Entity {
                     onFire = true;
                 }
             }
+            if (par instanceof ExplosionParticle) {
+                if (rr.intersects(par.getHitbox())) {
+                    health -= 5;
+                    par.remove = true;
+                    return;
+                }
+            }
         }
-        if (health <= 0) {
-            level.entities.remove(this);
-            level.getPlayer().chargeLevel++;
-            level.getPlayer().addExp(0.5f);
-            if (new Random().nextInt(10) == 0)
-                level.entities.add(new EntityHealthDrop(getX(), getY()));
-        }
+
         if (onFire)
             health -= 0.1f;
 
@@ -116,9 +127,9 @@ public class EntityRobot extends Entity {
             lastAttack = System.currentTimeMillis();
         }
 
-        if(type == 1){
-            if(r.nextInt(200) == 0){
-                level.entities.add(new EntityProjectile(getX(),getY(),(int)p.getX(),(int)p.getY(),new GreenProjectile()));
+        if (type == 1) {
+            if (r.nextInt(200) == 0) {
+                level.entities.add(new EntityProjectile(getX(), getY(), (int) p.getX(), (int) p.getY(), new GreenProjectile()));
             }
         }
 

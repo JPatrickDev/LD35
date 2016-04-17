@@ -50,6 +50,8 @@ public class EntityProjectile extends Entity{
     public void hitEntity(Entity entity,Level level) {
         if(entity instanceof EntityRobot && !(this.projectile instanceof GreenProjectile)){
             entity.health-=projectile.getDamage();
+            System.out.println(entity.health);
+            System.out.println(projectile.getDamage());
             life = 0;
             projectile.onCollideWithEntity(level,entity);
         }
