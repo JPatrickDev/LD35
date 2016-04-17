@@ -6,6 +6,8 @@ import me.jack.LD35.Entity.EntityProjectile;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Projectile.Projectile;
+import org.newdawn.slick.Sound;
+import uk.co.jdpatrick.JEngine.Sound.SoundEngine;
 
 import java.util.ArrayList;
 
@@ -26,11 +28,13 @@ public class SquareShape extends Shape {
         if (lastAttack == 0) {
             lastAttack = System.currentTimeMillis();
             level.entities.add(new EntityProjectile(level.getPlayer().getX(), level.getPlayer().getY(), x, y, t));
+            SoundEngine.getInstance().play("laser");
         }
         else{
             if(System.currentTimeMillis() - lastAttack >= t.getFireRate()){
                 lastAttack = System.currentTimeMillis();
                 level.entities.add(new EntityProjectile(level.getPlayer().getX(), level.getPlayer().getY(), x, y, t));
+                SoundEngine.getInstance().play("laser");
             }
         }
     }

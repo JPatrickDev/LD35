@@ -7,6 +7,7 @@ import me.jack.LD35.Level.Level;
 import me.jack.LD35.Projectile.FireballProjectile;
 import me.jack.LD35.Projectile.LaserProjectile;
 import me.jack.LD35.Projectile.Projectile;
+import uk.co.jdpatrick.JEngine.Sound.SoundEngine;
 
 import java.util.ArrayList;
 
@@ -26,11 +27,13 @@ public class CircleShape extends Shape{
         if (lastAttack == 0) {
             lastAttack = System.currentTimeMillis();
             level.entities.add(new EntityProjectile(level.getPlayer().getX(),level.getPlayer().getY(),x,y,t));
+            SoundEngine.getInstance().play("fire");
         }
         else{
             if(System.currentTimeMillis() - lastAttack >= t.getFireRate()){
                 lastAttack = System.currentTimeMillis();
                 level.entities.add(new EntityProjectile(level.getPlayer().getX(),level.getPlayer().getY(),x,y,t));
+                SoundEngine.getInstance().play("fire");
             }
         }
     }

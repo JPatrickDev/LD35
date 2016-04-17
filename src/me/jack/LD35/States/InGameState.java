@@ -11,6 +11,7 @@ import org.lwjgl.input.Mouse;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import uk.co.jdpatrick.JEngine.Sound.SoundEngine;
 
 /**
  * Created by Jack on 16/04/2016.
@@ -21,7 +22,11 @@ public class InGameState extends BasicGameState {
 
     @Override
     public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
+        gameContainer.setSoundVolume(0.5f);
         Tile.init();
+        SoundEngine.getInstance().addSound("explode",new Sound("res/sounds/explode.wav"));
+        SoundEngine.getInstance().addSound("fire",new Sound("res/sounds/fire.wav"));
+        SoundEngine.getInstance().addSound("laser",new Sound("res/sounds/laser.wav"));
     }
 
     @Override

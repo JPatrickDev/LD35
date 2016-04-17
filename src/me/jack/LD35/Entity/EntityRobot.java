@@ -105,7 +105,7 @@ public class EntityRobot extends Entity {
             ySpeed = (walkingY - getY());
 
         }
-        float factor = (float) (4 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
+        float factor = (float) (2 / Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed));
         xSpeed *= factor;
         ySpeed *= factor;
         if (!Float.isNaN(xSpeed))
@@ -171,5 +171,5 @@ public class EntityRobot extends Entity {
     }
 
     long lastAttack = 0;
-    long coolDown = 5;
+    long coolDown = 25;
 }

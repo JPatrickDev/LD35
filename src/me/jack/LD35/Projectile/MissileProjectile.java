@@ -5,6 +5,7 @@ import me.jack.LD35.Entity.EntityRobot;
 import me.jack.LD35.Level.Level;
 import me.jack.LD35.Particles.ExplosionParticle;
 import me.jack.LD35.Particles.FireParticle;
+import uk.co.jdpatrick.JEngine.Sound.SoundEngine;
 
 /**
  * Created by Jack on 17/04/2016.
@@ -25,6 +26,7 @@ public class MissileProjectile extends Projectile{
         if(entity instanceof EntityRobot){
             for(int i =0 ;i!= 300;i++)
                 level.particleSystem.addParticle(new ExplosionParticle((int)entity.getX(),(int)entity.getY()));
+            SoundEngine.getInstance().play("explode");
         }
 
     }

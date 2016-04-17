@@ -11,7 +11,7 @@ import me.jack.LD35.Particles.FireParticle;
 public class FireballProjectile extends Projectile{
 
     public FireballProjectile() {
-        super(1f, 5, 50,1,0,100,"Fire Ball");
+        super(1f, 5, 50,1,0,200,"Fire Ball");
     }
 
     @Override
