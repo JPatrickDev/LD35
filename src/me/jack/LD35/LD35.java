@@ -11,11 +11,12 @@ import org.newdawn.slick.state.StateBasedGame;
 public class LD35 extends StateBasedGame{
 
     public LD35() {
-        super("XXXX for LD35 - Theme:Shapeshift");
+        super("Squared for LD35 - Theme:Shapeshift");
     }
 
     @Override
     public void initStatesList(GameContainer gameContainer) throws SlickException {
+        gameContainer.setShowFPS(false);
         addState(new MainMenuState());
         addState(new InGameState());
         addState(new GameOverState());

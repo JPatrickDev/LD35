@@ -63,21 +63,21 @@ Rotate projectiles so they face the direction of travel/
 
 
 
-Remove all System.out debug
+Remove all System.out debug/
 
 Main menu/
 tutorial/
 sound effects/
 
 
-Delay between going gameover and accepting input
+Delay between going gameover and accepting input/
 
 Diamond AOE/
 
 
 Increase the robots health over time/
 
-Show a score at the game over screen
+Show a score at the game over screen/
 
 
 

@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Squared">
+    <output-path>$PROJECT_DIR$/out/artifacts/Squared</output-path>
+    <root id="archive" name="Squared.jar">
+      <element id="module-output" name="LD35" />
+      <element id="directory" name="res">
+        <element id="dir-copy" path="$PROJECT_DIR$/res" />
+      </element>
+    </root>
+  </artifact>
+</component>

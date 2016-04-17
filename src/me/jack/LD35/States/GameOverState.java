@@ -23,6 +23,7 @@ public class GameOverState extends BasicGameState{
 
     boolean go = false;
     static Level level;
+    int wait = 0;
     @Override
     public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
         graphics.drawString("GAME OVER!",50,50);
@@ -35,10 +36,11 @@ public class GameOverState extends BasicGameState{
 
     @Override
     public void update(GameContainer gameContainer, StateBasedGame stateBasedGame, int i) throws SlickException {
-        if(go) {
+        if(go && wait > 50) {
             stateBasedGame.enterState(1);
             go = false;
         }
+        wait++;
     }
 
     @Override
