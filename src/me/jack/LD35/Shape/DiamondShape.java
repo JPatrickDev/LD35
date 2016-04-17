@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class DiamondShape extends Shape {
 
     public DiamondShape() {
-        super(8, 10f, 200, 256, "An upgraded version\nof the default\nshape. Has much\nhigher fire rate.\nThe radius attack\ncauses massive\ndamage");
+        super(8, 10f, 500, 256, "An upgraded version\nof the default\nshape. Has much\nhigher fire rate.\nThe radius attack\ncauses massive\ndamage");
     }
 
     long lastAttack = 0;

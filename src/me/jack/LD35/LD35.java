@@ -1,7 +1,6 @@
 package me.jack.LD35;
 
-import me.jack.LD35.States.GameOverState;
-import me.jack.LD35.States.InGameState;
+import me.jack.LD35.States.*;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
@@ -17,7 +16,10 @@ public class LD35 extends StateBasedGame{
 
     @Override
     public void initStatesList(GameContainer gameContainer) throws SlickException {
+        addState(new MainMenuState());
         addState(new InGameState());
         addState(new GameOverState());
+        addState(new AboutState());
+        addState(new InstructionsState());
     }
 }
